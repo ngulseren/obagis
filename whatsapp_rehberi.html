@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <title>WhatsApp Kullanım Rehberi - Sevdiklerinizle Bağlanın</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #25d366; --bg-color: #e5ffe5; --text-color: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; font-size: 18px; }
+        header { background-color: var(--primary-color); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; border-left: 8px solid var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card h2 { color: #128c7e; border-bottom: 2px solid #eee; padding-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+        .instruction-box { display: flex; gap: 20px; margin: 20px 0; padding: 20px; background-color: #dcf8c6; border-radius: 10px; }
+        .instruction-box i { font-size: 2.5em; color: var(--primary-color); min-width: 50px; text-align: center; }
+        .step-number { background-color: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2em; font-weight: bold; }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+<header>
+    <i class="fab fa-whatsapp" style="font-size: 3em; margin-bottom: 15px;"></i>
+    <h1>WhatsApp</h1>
+    <p>Görüntülü Konuşun, Fotoğraf Gönderin</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2><span class="step-number">1</span> Görüntülü Arama</h2>
+        <p>Uzaktaki çocuklarınızın yüzünü görüp hasret gidermek için:</p>
+        <div class="instruction-box">
+            <i class="fas fa-video"></i>
+            <div><strong>Kamera İşareti:</strong> Sohbeti açın. Sağ üst köşedeki küçük <strong>Kamera</strong> işaretine dokunun. Telefon çalmaya başlayacak ve açtıklarında birbirinizi göreceksiniz.</div>
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">2</span> Sesli Mesaj (Konuşarak Gönderme)</h2>
+        <p>Yazı yazmak zor geliyorsa sesinizi kaydedip gönderebilirsiniz:</p>
+        <div class="instruction-box">
+            <i class="fas fa-microphone"></i>
+            <div><strong>Mikrofon Tuşu:</strong> Yazı yazılan yerin sağındaki <strong>Mikrofon</strong> simgesine basılı tutun ve konuşun. Parmağınızı çektiğinizde sesiniz karşıya gider.</div>
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">3</span> Fotoğraf Çekip Gönderme</h2>
+        <div class="instruction-box">
+            <i class="fas fa-camera"></i> 
+            <div><strong>Kamera Simgesi:</strong> Mesaj yazdığınız kutunun yanındaki fotoğraf makinesi işaretine basın. Mavi yuvarlak düğmeye basıp fotoğrafı çekin ve ok işaretine basıp yollayın.</div>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

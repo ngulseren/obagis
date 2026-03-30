@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <title>Mobil Bankacılık Rehberi - Güvenli İşlemler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #2e7d32; --bg-color: #e8f5e9; --text-color: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; font-size: 18px; }
+        header { background-color: var(--primary-color); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; border-left: 8px solid var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card h2 { color: #1b5e20; border-bottom: 2px solid #eee; padding-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+        .instruction-box { display: flex; gap: 20px; margin: 20px 0; padding: 20px; background-color: #f1f8e9; border-radius: 10px; }
+        .instruction-box i { font-size: 2.5em; color: var(--primary-color); min-width: 50px; text-align: center; }
+        .important-note { background-color: #ffebee; color: #c62828; padding: 15px; border-radius: 8px; border: 1px solid #ffcdd2; margin-top: 20px; font-weight: bold; }
+        .step-number { background-color: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+<header>
+    <i class="fas fa-university" style="font-size: 3em; margin-bottom: 15px;"></i>
+    <h1>Mobil Bankacılık</h1>
+    <p>Bankaya Gitmeden İşlemlerinizi Yapın</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2><i class="fas fa-shield-alt"></i> Önce Güvenlik!</h2>
+        <p>Banka uygulamasını kullanırken dikkat etmeniz gereken en önemli kural:</p>
+        <div class="important-note">
+            <i class="fas fa-exclamation-triangle"></i> Şifrenizi telefonda arayan "bankacı", "polis" veya "savcı" olduğunu söyleyen KİMSEYLE paylaşmayın. Banka sizden asla şifre istemez.
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">1</span> Bakiye Sorgulama</h2>
+        <p>Maaşınızın yatıp yatmadığını görmek için:</p>
+        <div class="instruction-box">
+            <i class="fas fa-wallet"></i>
+            <div><strong>Hesaplarım:</strong> Uygulamaya girdiğinizde ilk ekranda "Vadesiz Hesap" veya "Maaş Hesabı" yazar. Yanındaki rakam paranızı gösterir. Göz simgesine basarsanız gizli bakiye açılır.</div>
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">2</span> Para Gönderme (Havale/EFT)</h2>
+        <div class="instruction-box">
+            <i class="fas fa-paper-plane"></i>
+            <div><strong>Para Transferleri:</strong> Menüden "Para Transferi"ne basın. Göndereceğiniz kişinin <strong>IBAN</strong> numarasını (TR ile başlayan uzun numara) yazın. Adını soyadını ve tutarı girip "Devam" tuşuna basın.</div>
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">3</span> Fatura Ödeme</h2>
+        <div class="instruction-box">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <div><strong>Ödemeler:</strong> Elektrik veya su faturası ödemek için "Ödemeler > Fatura Ödeme" yolunu izleyin. Kurumu seçip (Örn: TEDAŞ) abone numaranızı yazın.</div>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

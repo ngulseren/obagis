@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <title>Drama ve Rol Yapma Etkinlik Kartları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; padding: 40px; background: white; margin: 0; }
+        .page-header { text-align: center; margin-bottom: 50px; border-bottom: 2px solid #ccc; padding-bottom: 20px; }
+        .card-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .drama-card { 
+            width: 300px; 
+            height: 480px; 
+            border: 2px solid #333; 
+            border-radius: 15px; 
+            padding: 20px; 
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1); 
+            background: #fff; 
+            position: relative; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden;
+        }
+        .card-header { text-align: center; border-bottom: 2px dashed #999; padding-bottom: 10px; margin-bottom: 15px; }
+        .card-title { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: #d35400; text-transform: uppercase; }
+        .card-icon { font-size: 3rem; color: #e67e22; margin: 10px 0; }
+        .role-section { background: #fdf2e9; padding: 10px; border-radius: 5px; margin-bottom: 10px; border-left: 4px solid #d35400; }
+        .role-label { font-weight: bold; font-size: 0.9rem; color: #d35400; }
+        .scenario-text { font-style: italic; font-size: 0.95rem; line-height: 1.4; color: #555; }
+        .objective { margin-top: auto; background: #333; color: white; padding: 10px; text-align: center; border-radius: 5px; font-weight: bold; }
+        
+        .card-type-a { border-color: #2980b9; } 
+        .card-type-a .card-title, .card-type-a .role-label, .card-type-a .card-icon { color: #2980b9; border-color: #2980b9; }
+        .card-type-a .role-section { background: #eaf2f8; border-color: #2980b9; }
+
+        .card-type-b { border-color: #27ae60; }
+        .card-type-b .card-title, .card-type-b .role-label, .card-type-b .card-icon { color: #27ae60; border-color: #27ae60; }
+        .card-type-b .role-section { background: #e9f7ef; border-color: #27ae60; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .card-container { display: block; }
+            .drama-card { page-break-inside: avoid; margin-bottom: 40px; border: 2px solid #000; float: left; margin-right: 20px; }
+            .page-header { display: none; }
+        }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+
+    <div class="page-header">
+        <h1>6. Drama ve Rol Yapma Etkinlik Kartları</h1>
+        <p>Kesilerek katılımcılara dağıtılacak senaryo kartları.</p>
+    </div>
+
+    <div class="card-container">
+        
+        <!-- Kart 1 -->
+        <div class="drama-card card-type-a">
+            <div class="card-header">
+                <i class="fas fa-user-injured card-icon"></i>
+                <div class="card-title">Senaryo: "Dizim Ağrıyor"</div>
+            </div>
+            
+            <div class="role-section">
+                <div class="role-label">ROL: AHMET AMCA (70 Yaşında)</div>
+                <div class="scenario-text">
+                    "Dizlerin çok ağrıyor ve hastaneye gitmek istiyorsun. Ama hastane çok kalabalık. Torunundan sana telefondan randevu almasını istiyorsun."
+                </div>
+            </div>
+
+            <div class="role-section">
+                <div class="role-label">GÖREV:</div>
+                <div class="scenario-text">
+                    MHRS uygulamasını aç. Ortopedi bölümünü bul. Yarın sabah saat 10:00'a en yakın zamana randevu almaya çalış. Not: Randevu bulamazsan başka hastaneye bak.
+                </div>
+            </div>
+            
+            <div class="objective">HEDEF: MHRS Randevu Arama</div>
+        </div>
+
+        <!-- Kart 2 -->
+        <div class="drama-card card-type-b">
+            <div class="card-header">
+                <i class="fas fa-file-contract card-icon"></i>
+                <div class="card-title">Senaryo: "Muhtar Belgesi"</div>
+            </div>
+            
+            <div class="role-section">
+                <div class="role-label">ROL: FATMA TEYZE (65 Yaşında)</div>
+                <div class="scenario-text">
+                    "Oğlun yurt dışına çıkacak ve senden ikametgah belgesi istiyor. Muhtara gitmek zor geliyor. Komşun Hatice sana telefondan yapabileceğini söyledi."
+                </div>
+            </div>
+
+            <div class="role-section">
+                <div class="role-label">GÖREV:</div>
+                <div class="scenario-text">
+                    e-Devlet'e şifrenle gir. Arama kutusuna 'yerleşim yeri' yaz. Belgeyi oluştur ve telefonuna indir (PDF olarak kaydet).
+                </div>
+            </div>
+            
+            <div class="objective">HEDEF: e-Devlet Belge Alma</div>
+        </div>
+
+        <!-- Kart 3 -->
+        <div class="drama-card">
+            <div class="card-header">
+                <i class="fas fa-capsules card-icon"></i>
+                <div class="card-title">Senaryo: "İlaçlarımı Unuttum"</div>
+            </div>
+            
+            <div class="role-section">
+                <div class="role-label">ROL: MEHMET BEY (55 Yaşında)</div>
+                <div class="scenario-text">
+                    "Doktorun geçen ay sana bir ilaç yazmıştı, kutusunu attın ve adını hatırlamıyorsun. Eczaneye gitmeden telefonundan bu ilacın adına bakman lazım."
+                </div>
+            </div>
+
+            <div class="role-section">
+                <div class="role-label">GÖREV:</div>
+                <div class="scenario-text">
+                    e-Nabız uygulamasına gir. 'Reçetelerim' bölümünü bul. Son yazılan reçeteyi aç ve ilacın adını yüksek sesle oku.
+                </div>
+            </div>
+            
+            <div class="objective">HEDEF: e-Nabız Geçmiş İlaç Takibi</div>
+        </div>
+
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

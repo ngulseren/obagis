@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <title>AI Sesli Yönlendirme Senaryoları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; padding: 40px; background: #f4f6f9; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 15px; }
+        .scenario-card { border: 1px solid #ddd; border-left: 5px solid #3498db; margin-bottom: 25px; padding: 20px; border-radius: 4px; background: #fff; }
+        .scenario-title { font-weight: bold; font-size: 1.2rem; color: #2980b9; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .voice-text { background: #e8f4fd; padding: 15px; border-radius: 8px; font-style: italic; color: #444; margin: 10px 0; position: relative; }
+        .voice-text::before { content: '\f130'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: -30px; top: 50%; transform: translateY(-50%); color: #3498db; font-size: 1.5rem; }
+        .action-step { margin-top: 10px; font-size: 0.9rem; color: #666; }
+        .badge { background: #3498db; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: auto; }
+        .video-placeholder { background: #333; color: white; height: 150px; display: flex; align-items: center; justify-content: center; margin-top: 15px; border-radius: 5px; flex-direction: column; }
+        .video-placeholder i { font-size: 3rem; margin-bottom: 10px; opacity: 0.8; }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+    <div class="container">
+        <h1>5. AI Destekli Sesli Yönlendirme Senaryoları</h1>
+        <p>Bu senaryolar, okuma güçlüğü çeken veya teknolojiyi sesle yönetmeyi tercih eden yaşlı katılımcılar için hazırlanmıştır. Metinden sese (Text-to-Speech) motorları ile seslendirilerek videolarda kullanılır.</p>
+
+        <!-- Senaryo 1 -->
+        <div class="scenario-card">
+            <div class="scenario-title">
+                <i class="fas fa-hospital"></i> Senaryo 1: MHRS Randevu Alma <span class="badge">Zorluk: Orta</span>
+            </div>
+            <div class="voice-text">
+                "Merhaba. Şimdi hastaneden randevu almak için MHRS uygulamasını açalım. Kırmızı beyaz renkli ikona yavaşça dokunun. Açılan ekranda T.C. kimlik numaranızı ve e-Devlet şifrenizi girin. Unutmayın, şifrenizi kimseyle paylaşmamalısınız. Şimdi 'Randevu Al' butonunu görüyor musunuz? Harika. Oraya dokunun."
+            </div>
+            <div class="action-step"><strong><i class="fas fa-arrow-right"></i> Hedef:</strong> Kullanıcıyı giriş ekranından randevu arama ekranına taşımak.</div>
+            <div class="video-placeholder">
+                <i class="fas fa-play-circle"></i>
+                <span>Örnek Video: MHRS Giriş ve Randevu Arama (video_mhrs_01.mp4)</span>
+            </div>
+        </div>
+
+        <!-- Senaryo 2 -->
+        <div class="scenario-card" style="border-left-color: #e74c3c;">
+            <div class="scenario-title" style="color: #c0392b;">
+                <i class="fas fa-heartbeat"></i> Senaryo 2: e-Nabız Tahlil Görüntüleme <span class="badge" style="background:#e74c3c">Zorluk: Kolay</span>
+            </div>
+            <div class="voice-text">
+                "Geçmiş olsun dileklerimizle başlayalım. Tahlil sonuçlarınıza bakmak için e-Nabız'a girdiniz. Ekranın ortasında 'Tahlillerim' yazan bir kutucuk var. Genellikle mikroskop resmi olur. Oraya basalım. Son tarihli tahliliniz en üstte görünecektir. Üzerine tıklayarak doktorunuzun gördüğü sonuçları görebilirsiniz."
+            </div>
+            <div class="action-step"><strong><i class="fas fa-arrow-right"></i> Hedef:</strong> Kullanıcının son yapılan kan tahlilini bulmasını sağlamak.</div>
+        </div>
+
+        <!-- Senaryo 3 -->
+        <div class="scenario-card" style="border-left-color: #27ae60;">
+            <div class="scenario-title" style="color: #27ae60;">
+                <i class="fas fa-file-alt"></i> Senaryo 3: e-Devlet İkametgah Belgesi <span class="badge" style="background:#27ae60">Zorluk: Orta</span>
+            </div>
+            <div class="voice-text">
+                "Resmi bir belgeye mi ihtiyacınız var? e-Devlet arama çubuğuna 'İkametgah' yazalım. Çıkan sonuçlardan 'Yerleşim Yeri Belgesi Sorgulama'ya tıklayın. 'Yukarıdaki bilgilendirme yazısını okudum' kutucuğunu işaretleyin. Belgenin kime verileceğini seçip 'Sorgula' deyin. İşte belgeniz hazır!"
+            </div>
+            <div class="action-step"><strong><i class="fas fa-arrow-right"></i> Hedef:</strong> Arama fonksiyonunu kullanarak belge üretmek.</div>
+        </div>
+
+    </div>
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

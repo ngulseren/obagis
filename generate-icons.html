@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBAGIS Icon Generator</title>
+    <style>
+        :root {
+            --bg: #f4f5f7;
+            --panel: #ffffff;
+            --ink: #0f172a;
+            --muted: #64748b;
+            --blue: #2563eb;
+            --blue-deep: #1e40af;
+            --amber: #f59e0b;
+            --stroke: #dbe3ee;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Avenir Next", "Segoe UI", sans-serif;
+            background:
+                radial-gradient(circle at 10% -10%, #dbeafe 0%, transparent 35%),
+                radial-gradient(circle at 95% 10%, #fef3c7 0%, transparent 35%),
+                var(--bg);
+            color: var(--ink);
+            min-height: 100vh;
+            padding: 28px;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            gap: 18px;
+        }
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--stroke);
+            border-radius: 16px;
+            box-shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 1.6rem;
+            letter-spacing: 0.2px;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .actions {
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.98);
+        }
+
+        .primary {
+            background: linear-gradient(135deg, var(--blue), var(--blue-deep));
+            color: white;
+        }
+
+        .secondary {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .card {
+            border: 1px solid var(--stroke);
+            border-radius: 12px;
+            padding: 10px;
+            background: #fbfdff;
+            display: grid;
+            gap: 8px;
+            justify-items: center;
+        }
+
+        .card strong {
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .card a {
+            color: var(--blue);
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .manifest {
+            margin-top: 12px;
+            width: 100%;
+            min-height: 170px;
+            border: 1px solid var(--stroke);
+            border-radius: 12px;
+            padding: 12px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            resize: vertical;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .hint {
+            margin-top: 10px;
+            font-size: 0.83rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 14px;
+            }
+
+            .panel {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="panel">
+            <h1>OBAGIS PWA Ikon Uretici</h1>
+            <p>Asagidaki arac, manifest ve PWA icin gereken PNG ikonlarini tek yerden olusturur. "Hepsini indir" secenegi tum ikonlar icin otomatik indirme baslatir.</p>
+            <div class="actions">
+                <button class="primary" id="downloadAll">Hepsini indir</button>
+                <button class="secondary" id="copyManifest">Manifest kismini kopyala</button>
+            </div>
+            <div id="iconGrid" class="grid" aria-live="polite"></div>
+        </section>
+
+        <section class="panel">
+            <h1>manifest.json icon bolumu</h1>
+            <textarea id="manifestSnippet" class="manifest" readonly></textarea>
+            <p class="hint">Not: Tarayici guvenlik politikasi nedeniyle dosyalar otomatik olarak proje klasorune yazilamaz; indirdigin PNG dosyalarini manuel olarak icons/ klasorune tasiyabilirsin.</p>
+        </section>
+    </main>
+
+    <script>
+        const iconSpecs = [
+            { size: 72, purpose: "any maskable" },
+            { size: 96, purpose: "any maskable" },
+            { size: 128, purpose: "any maskable" },
+            { size: 144, purpose: "any maskable" },
+            { size: 152, purpose: "any maskable" },
+            { size: 192, purpose: "any maskable" },
+            { size: 384, purpose: "any maskable" },
+            { size: 512, purpose: "any maskable" }
+        ];
+
+        const iconGrid = document.getElementById("iconGrid");
+        const manifestSnippet = document.getElementById("manifestSnippet");
+        const renderedIcons = new Map();
+
+        function roundedRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        function drawIcon(size) {
+            const canvas = document.createElement("canvas");
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext("2d");
+
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, "#2563eb");
+            gradient.addColorStop(1, "#1e40af");
+            ctx.fillStyle = gradient;
+
+            const pad = size * 0.03;
+            const radius = size * 0.2;
+            roundedRect(ctx, pad, pad, size - pad * 2, size - pad * 2, radius);
+            ctx.fill();
+
+            ctx.fillStyle = "rgba(255,255,255,0.15)";
+            ctx.beginPath();
+            ctx.arc(size * 0.5, size * 0.68, size * 0.34, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.font = `700 ${Math.round(size * 0.5)}px \"Avenir Next\", sans-serif`;
+            ctx.fillText("O", size * 0.5, size * 0.5);
+
+            ctx.fillStyle = "#f59e0b";
+            ctx.beginPath();
+            ctx.arc(size * 0.7, size * 0.3, size * 0.08, 0, Math.PI * 2);
+            ctx.fill();
+
+            return canvas;
+        }
+
+        function triggerDownload(dataUrl, filename) {
+            const link = document.createElement("a");
+            link.download = filename;
+            link.href = dataUrl;
+            link.click();
+        }
+
+        function buildCards() {
+            iconSpecs.forEach(spec => {
+                const canvas = drawIcon(spec.size);
+                const dataUrl = canvas.toDataURL("image/png");
+                const fileName = `icon-${spec.size}x${spec.size}.png`;
+                renderedIcons.set(fileName, dataUrl);
+
+                const card = document.createElement("article");
+                card.className = "card";
+
+                const preview = document.createElement("canvas");
+                preview.width = 84;
+                preview.height = 84;
+                const pctx = preview.getContext("2d");
+                pctx.drawImage(canvas, 0, 0, 84, 84);
+
+                const title = document.createElement("strong");
+                title.textContent = `${spec.size}x${spec.size}`;
+
+                const download = document.createElement("a");
+                download.href = dataUrl;
+                download.download = fileName;
+                download.textContent = "Indir";
+
+                card.append(preview, title, download);
+                iconGrid.append(card);
+            });
+        }
+
+        function buildManifestSnippet() {
+            const icons = iconSpecs.map(spec => ({
+                src: `icons/icon-${spec.size}x${spec.size}.png`,
+                sizes: `${spec.size}x${spec.size}`,
+                type: "image/png",
+                purpose: spec.purpose
+            }));
+
+            manifestSnippet.value = JSON.stringify({ icons }, null, 2);
+        }
+
+        document.getElementById("downloadAll").addEventListener("click", () => {
+            renderedIcons.forEach((dataUrl, filename) => triggerDownload(dataUrl, filename));
+        });
+
+        document.getElementById("copyManifest").addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(manifestSnippet.value);
+            } catch (error) {
+                manifestSnippet.select();
+                document.execCommand("copy");
+            }
+        });
+
+        buildCards();
+        buildManifestSnippet();
+    </script>
+</body>
+</html>

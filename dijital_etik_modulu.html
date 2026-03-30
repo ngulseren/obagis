@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <title>Etik ve Dijital Vatandaşlık Modülü</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; background: #fffbe6; padding: 40px; }
+        .page-container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-left: 10px solid #f1c40f; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { font-family: 'Oswald', sans-serif; color: #d35400; text-align: center; border-bottom: 2px solid #ccc; padding-bottom: 15px; margin-bottom: 40px; }
+        
+        .ethics-card { border: 2px dashed #f39c12; background: #fffdf5; padding: 20px; margin-bottom: 25px; border-radius: 10px; position: relative; }
+        .ethics-title { font-weight: bold; font-size: 1.3rem; margin-bottom: 10px; color: #d35400; display: flex; align-items: center; gap: 10px; }
+        .ethics-icon { font-size: 2rem; color: #e67e22; }
+        .do-dont { display: flex; gap: 20px; margin-top: 15px; }
+        .do-box { flex: 1; background: #e8f8f5; border: 1px solid #2ecc71; padding: 10px; border-radius: 5px; color: #27ae60; }
+        .dont-box { flex: 1; background: #fdedec; border: 1px solid #c0392b; padding: 10px; border-radius: 5px; color: #c0392b; }
+        .do-title { font-weight: bold; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; }
+        .scenario-alert { background: #333; color: white; padding: 10px; border-radius: 5px; margin-top: 15px; font-size: 0.9rem; }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+
+    <div class="page-container">
+        <h1>14. ETİK VE DİJİTAL GÜVENLİK MİNİ EĞİTİM MODÜLÜ</h1>
+        <p style="text-align:center; margin-bottom:30px;">
+            Bu modül, yaşlı katılımcıları internet dolandırıcılığına karşı korumak ve güvenli kullanım alışkanlığı kazandırmak amacıyla hazırlanmıştır.
+        </p>
+
+        <!-- Konu 1: Şifre Güvenliği -->
+        <div class="ethics-card">
+            <div class="ethics-title">
+                <i class="fas fa-key ethics-icon"></i> 1. ŞİFRE GÜVENLİĞİ
+            </div>
+            <p>e-Devlet ve banka şifreniz evinizin anahtarı gibidir. Kimseye (muhtara, komşuya, hatta torununuza bile) vermeyin.</p>
+            
+            <div class="do-dont">
+                <div class="do-box">
+                    <div class="do-title"><i class="fas fa-check"></i> DOĞRUSU</div>
+                    Şifrenizi aklınızda tutun veya evde kimsenin bulamayacağı bir deftere yazın.
+                </div>
+                <div class="dont-box">
+                    <div class="do-title"><i class="fas fa-times"></i> YANLIŞI</div>
+                    Şifrenizi kağıda yazıp cüzdanınızda veya telefon kılıfınızın arkasında saklamayın.
+                </div>
+            </div>
+        </div>
+
+        <!-- Konu 2: Dolandırıcılık -->
+        <div class="ethics-card">
+            <div class="ethics-title">
+                <i class="fas fa-user-secret ethics-icon"></i> 2. TELEFON DOLANDIRICILIĞI
+            </div>
+            <p>"Ben Hakimim, Savcıyım, Polisimm" diyerek sizden para veya şifre isteyenlere inanmayın. Devlet sizden telefonda ASLA para istemez.</p>
+            
+            <div class="scenario-alert">
+                <i class="fas fa-exclamation-triangle"></i> <strong>DİKKAT!</strong> Biri arayıp "Adınız terör örgütüne karıştı" derse hemen telefonu kapatın ve 155'i veya Muhtarı arayın.
+            </div>
+        </div>
+
+        <!-- Konu 3: SMS Linkleri -->
+        <div class="ethics-card">
+            <div class="ethics-title">
+                <i class="fas fa-sms ethics-icon"></i> 3. ŞÜPHELİ MESAJLAR (LİNKLER)
+            </div>
+            <p>Telefonunuza gelen "Bedava kontör kazandınız", "Hediye kazandınız" mesajlarındaki mavi yazılara (linklere) tıklamayın.</p>
+            
+            <div class="do-dont">
+                <div class="do-box">
+                    <div class="do-title"><i class="fas fa-check"></i> DOĞRUSU</div>
+                    Tanımadığınız numaradan gelen mesajı silin.
+                </div>
+                <div class="dont-box">
+                    <div class="do-title"><i class="fas fa-times"></i> YANLIŞI</div>
+                    Merak edip "Acaba neymiş?" diye tıklamak. (Virüs bulaşabilir!)
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

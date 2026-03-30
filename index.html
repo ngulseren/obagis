@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Kırsal Dijital Hizmetler - Proje Yönetim Paneli</title>
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OBAGIS">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <meta name="description" content="Kırsal Kesimde Dijital Hizmetler - Proje Yönetim Paneli">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --sidebar-width: 280px;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: #111827;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .brand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #374151;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #60a5fa;
+        }
+
+        .nav-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #9ca3af;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            color: #d1d5db;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: #374151;
+            color: white;
+        }
+
+        .nav-item i { width: 25px; }
+
+        /* MAIN CONTENT */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            margin: 0;
+            color: #111827;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-badge {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-weight: 600;
+            color: #4b5563;
+        }
+        .stat-badge span { color: var(--primary); }
+
+        /* GRID SYSTEM */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon-wrapper {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #111827;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 15px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: #eff6ff;
+            color: var(--primary);
+            transition: 0.2s;
+        }
+        
+        .btn:hover { background: var(--primary); color: white; }
+
+        /* COLORS */
+        .bg-blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .bg-green { background: linear-gradient(135deg, #10b981, #059669); }
+        .bg-purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .bg-orange { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .bg-red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .bg-indigo { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+
+        /* SECTION TITLES */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        .section-header h2 {
+            font-size: 1.3rem;
+            color: #374151;
+            margin: 0;
+        }
+        .line { flex: 1; height: 1px; background: #e5e7eb; }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    
+
+    <!-- MAIN DASHBOARD -->
+    <main class="main-content">
+        
+        <div class="header">
+            <div>
+                <h1>Yonetim Paneli (Dashboard)</h1>
+                <p style="color: #6b7280; margin: 5px 0 0;">Kırsal Kesimde Dijital Hizmetler - Proje Dosyaları</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-badge"><i class="fas fa-check-circle"></i> <span>15</span> Tamamlanan Çıktı</div>
+                <div class="stat-badge"><i class="fas fa-clock"></i> <span>20</span> Hafta Süre</div>
+            </div>
+        </div>
+
+        <!-- 1. DİJİTAL REHBERLER (UYGULAMA METERYALLERİ) -->
+        <div class="section-header">
+            <h2 style="color: #2563eb;"><i class="fas fa-book-reader"></i> Dijital Rehber Paketleri</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-red"><i class="fas fa-university"></i></div>
+                </div>
+                <div class="card-title">e-Devlet Rehberi</div>
+                <div class="card-desc">Giriş yapma, şifre alma ve temel sorgulama işlemlerini anlatan ana rehber.</div>
+                <div class="card-footer"><a href="edevlet_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-green"><i class="fas fa-hospital-user"></i></div>
+                </div>
+                <div class="card-title">MHRS Randevu</div>
+                <div class="card-desc">Hastane randevusu alma, iptal etme ve poliklinik seçme rehberi.</div>
+                <div class="card-footer"><a href="mhrs_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-red"><i class="fas fa-heartbeat"></i></div>
+                </div>
+                <div class="card-title">e-Nabız</div>
+                <div class="card-desc">Tahlil sonuçları, ilaç bilgisi ve doktor ziyaretlerini görüntüleme.</div>
+                <div class="card-footer"><a href="enabiz_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-blue"><i class="fas fa-wallet"></i></div>
+                </div>
+                <div class="card-title">Mobil Bankacılık</div>
+                <div class="card-desc">Güvenli giriş, bakiye sorgulama ve fatura ödeme adımları.</div>
+                <div class="card-footer"><a href="mobil_bankacilik_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-green"><i class="fab fa-whatsapp"></i></div>
+                </div>
+                <div class="card-title">WhatsApp</div>
+                <div class="card-desc">Görüntülü arama yapma ve torunlarla iletişim kurma rehberi.</div>
+                <div class="card-footer"><a href="whatsapp_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-orange"><i class="fas fa-map-marked-alt"></i></div>
+                </div>
+                <div class="card-title">Google Haritalar</div>
+                <div class="card-desc">Konum atma, adres bulma ve yol tarifi alma.</div>
+                <div class="card-footer"><a href="google_maps_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+             <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-indigo"><i class="fas fa-kaaba"></i></div>
+                </div>
+                <div class="card-title">Diyanet & Namaz</div>
+                <div class="card-desc">İmsakiye, kıble bulma ve ezan vakitleri uygulaması.</div>
+                <div class="card-footer"><a href="diyanet_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-purple"><i class="fab fa-youtube"></i></div>
+                </div>
+                <div class="card-title">YouTube</div>
+                <div class="card-desc">Video arama ve sesli komut kullanma rehberi.</div>
+                <div class="card-footer"><a href="youtube_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+             <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-orange"><i class="fas fa-truck"></i></div>
+                </div>
+                <div class="card-title">PTT Kargo</div>
+                <div class="card-desc">Kargo takibi ve gönderi sorgulama.</div>
+                <div class="card-footer"><a href="ptt_kargo_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-red"><i class="fas fa-landmark"></i></div>
+                </div>
+                <div class="card-title">CİMER</div>
+                <div class="card-desc">Cumhurbaşkanlığı İletişim Merkezi başvuru rehberi.</div>
+                <div class="card-footer"><a href="cimer_rehberi.html" class="btn">Görüntüle</a></div>
+            </div>
+        </div>
+
+        <!-- 2. DESTEKLEYİCİ MATERYALLER -->
+        <div class="section-header">
+            <h2 style="color: #f59e0b;"><i class="fas fa-box-open"></i> Destekleyici Materyaller & Etkinlikler</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-purple"><i class="fas fa-robot"></i></div>
+                    <span style="font-size: 0.7rem; background: #e0e7ff; color: #4338ca; padding: 2px 6px; border-radius: 4px;">YENİ</span>
+                </div>
+                <div class="card-title">AI Sesli Yönlendirme</div>
+                <div class="card-desc">Okuma güçlüğü çekenler için sesli komut senaryoları.</div>
+                <div class="card-footer"><a href="ai_sesli_yonlendirme.html" class="btn">İncele</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-green"><i class="fas fa-users"></i></div>
+                </div>
+                <div class="card-title">Kolay Dil Broşür Seti</div>
+                <div class="card-desc">Basitleştirilmiş, çıktısı alınabilir kartlar.</div>
+                <div class="card-footer"><a href="kolay_dil_brosur_seti.html" class="btn">İncele</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-orange"><i class="fas fa-theater-masks"></i></div>
+                </div>
+                <div class="card-title">Drama Etkinlikleri</div>
+                <div class="card-desc">Rol yapma (Role-playing) senaryo kartları.</div>
+                <div class="card-footer"><a href="drama_etkinlik_kartlari.html" class="btn">İncele</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon-wrapper">
+                    <div class="card-icon bg-red"><i class="fas fa-shield-alt"></i></div>
+                </div>
+                <div class="card-title">Etik & Güvenlik Modülü</div>
+                <div class="card-desc">Dolandırıcılık farkındalığı ve şifre güvenliği eğitimi.</div>
+                <div class="card-footer"><a href="dijital_etik_modulu.html" class="btn">İncele</a></div>
+            </div>
+        </div>
+
+        <!-- 3. YÖNETİM & KOORDİNASYON -->
+        <div class="section-header">
+            <h2 style="color: #374151;"><i class="fas fa-cogs"></i> Yönetim & Koordinasyon</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card" style="border-left: 5px solid #2563eb;">
+                <div class="card-title">Resmi Sonuç Raporu</div>
+                <div class="card-desc">MEB onaylı proje sonuç raporu formu (Güncellendi).</div>
+                <div class="card-footer"><a href="sonuc-raporu.html" class="btn">Formu Aç</a></div>
+            </div>
+
+             <div class="card" style="border-left: 5px solid #27ae60;">
+                 <div class="card-title">Katılımcı Listesi</div>
+                 <div class="card-desc">300 Kişilik köy bazlı katılımcı verisi (CSV).</div>
+                 <div class="card-footer"><a href="katilim_listesi.csv" class="btn">İndir</a></div>
+             </div>
+
+             <div class="card" style="border-left: 5px solid #e67e22;">
+                <div class="card-title">Tanıtım & Sosyal Medya</div>
+                <div class="card-desc">Afiş taslakları ve sosyal medya içeriği.</div>
+                <div class="card-footer"><a href="tanitim_ve_sosyal_medya.html" class="btn">Aç</a></div>
+            </div>
+        </div>
+
+    
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</main>
+
+<script src="layout.js"></script>
+<script>
+// PWA Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+            console.log('SW registered:', reg.scope);
+        }).catch(err => {
+            console.log('SW registration failed:', err);
+        });
+    });
+}
+</script>
+</body>
+</html>
