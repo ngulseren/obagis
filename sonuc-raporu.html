@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>YEKTA • Sonuç Raporu (Doldurulmuş)</title>
+  <style>
+
+    :root { 
+        --primary: #2563eb; 
+        --secondary: #7e22ce; 
+        --accent: #06b6d4; 
+        --success: #10b981; 
+        --error: #ef4444; 
+        --warning: #f59e0b; 
+        --bg: #f9fafb; /* Light Background */
+        --card: #ffffff; /* White Card */
+        --card2: #f1f5f9; /* Light Header */
+        --text: #1e293b; /* Dark Text */
+        --muted: #64748b; 
+        --border: #e2e8f0; 
+        --sh: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        --t: .2s ease; 
+    }
+    
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 18px; }
+    
+    .header { 
+        background: linear-gradient(135deg,var(--primary),var(--secondary)); 
+        border-radius: 16px; 
+        padding: 20px; 
+        box-shadow: var(--sh); 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        gap: 12px; 
+        flex-wrap: wrap; 
+        color: white; /* Ensure header text is white on gradient */
+    }
+    .header .left b { font-size: 1.15rem; }
+    .header .small { color: rgba(255,255,255,0.9); }
+    
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.2); font-weight: 900; font-size: 0.82rem; color: white; }
+    
+    .card { margin-top: 24px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--sh); overflow: hidden; }
+    .card .head { background: var(--card2); padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .card .body { padding: 24px; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .group { display: flex; flex-direction: column; gap: 8px; }
+    label { font-weight: 700; font-size: 0.9rem; color: #334155; }
+    
+    input, select, textarea { 
+        width: 100%; 
+        padding: 12px 14px; 
+        border-radius: 8px; 
+        background: #ffffff; 
+        border: 1px solid #cbd5e1; 
+        color: #0f172a; /* Dark text for inputs */
+        outline: none; 
+        transition: var(--t); 
+        font-size: 0.95rem;
+    }
+    
+    textarea { min-height: 120px; resize: vertical; line-height: 1.5; font-family: inherit; }
+    input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+    
+    .small { color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-top: 4px; }
+    .hr { height: 1px; background: var(--border); margin: 24px 0; }
+    
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; margin-top: 20px; }
+    .btn { border: 0; border-radius: 8px; padding: 12px 20px; font-weight: 600; cursor: pointer; transition: var(--t); display: inline-flex; align-items: center; gap: 8px; text-decoration: none; white-space: nowrap; font-size: 0.95rem; }
+    .btn:hover { transform: translateY(-1px); filter: brightness(105%); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-muted { background: rgba(255, 255, 255, 0.2); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+    
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 0.8rem; }
+    .badge-ok { background: #dcfce7; border: 1px solid #bbf7d0; color: #166534; }
+    
+    .readonlyBox { 
+        border: 1px dashed #cbd5e1; 
+        padding: 12px 14px; 
+        border-radius: 8px; 
+        background: #f8fafc; 
+        color: #64748b; 
+        font-size: 0.95rem; 
+        line-height: 1.5; 
+    }
+    
+    .od-card { border: 1px solid var(--border); border-radius: 12px; background: #f8fafc; padding: 16px; transition: var(--t); }
+    .od-card:hover { background: #fff; box-shadow: var(--sh); }
+    .od-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .od-title { font-weight: 700; color: #1e293b; font-size: 1.05rem; }
+    .od-score { font-weight: 700; color: #059669; background: #d1fae5; border: 1px solid #6ee7b7; padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; }
+    
+    .ckrow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+    .ckrow label { 
+        font-weight: 600; 
+        font-size: 0.9rem; 
+        display: flex; 
+        align-items: center; 
+        gap: 8px; 
+        border: 1px solid #e2e8f0; 
+        padding: 8px 12px; 
+        border-radius: 8px; 
+        background: #fff; 
+        cursor: pointer;
+        transition: var(--t);
+    }
+    .ckrow label:hover { border-color: var(--primary); background: #eff6ff; }
+    .ckrow input { width: auto; margin: 0; }
+
+  </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+<div class="container">
+  <div class="header">
+    <div class="left">
+      <b>YEKTA • Sonuç Raporu</b>
+      <div class="small">Onaylı proje için rapor: Taslak → İlçeye Gönder</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <span class="pill">Okul: MARDİN MESLEKİ VE TEKNİK ANADOLU LİSESİ</span>
+      <span class="pill">Öğretmen: Nurettin GÜLSEREN</span>
+      <span class="pill">Başvuru ID: 42</span>
+      <span class="pill">Rapor Durum: taslak</span>
+      <a class="btn btn-muted" href="#">← Listeye Dön</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <b>Sonuç Raporu Formu</b>
+        <span class="badge badge-ok">Düzenlenebilir</span>
+      </div>
+      <div class="small">Proje Adı otomatik (onaylı başlıktan).</div>
+    </div>
+
+    <div class="body">
+      <form id="mainForm" method="post">
+        <div class="grid">
+          <div class="group">
+            <label>Okul Adı</label>
+            <div class="readonlyBox">MARDİN MESLEKİ VE TEKNİK ANADOLU LİSESİ</div>
+          </div>
+
+          <div class="group">
+            <label>Öğretmen Adı</label>
+            <div class="readonlyBox">Nurettin GÜLSEREN</div>
+          </div>
+
+          <div class="group" style="grid-column:1/-1">
+            <label>Proje Adı (Onaylı)</label>
+            <div class="readonlyBox">KIRSAL KESİMDE DİJİTAL HİZMETLER</div>
+          </div>
+
+          <div class="group">
+            <label>Uygulama Süresi</label>
+            <input type="number" name="uygulama_suresi" min="1" max="3650" required value="20" placeholder="Örn: 4">
+            <div class="small">Gerçekleşen süre.</div>
+          </div>
+
+          <div class="group">
+            <label>Birim</label>
+            <select name="sure_birim" required>
+              <option value="" disabled>Seçiniz</option>
+              <option value="gun">Gün</option>
+              <option value="hafta" selected>Hafta</option>
+            </select>
+          </div>
+
+          <div class="group">
+            <label>Katılımcı Sayısı</label>
+            <input type="number" name="katilimci_sayisi" min="1" max="200000" required value="964" placeholder="Örn: 120">
+            <div class="small">Etkinlikte yer alan toplam öğrenci/katılımcı.</div>
+          </div>
+
+          <div class="group" style="grid-column:1/-1">
+            <label>Ürün / Çıktı Listesi</label>
+            <textarea name="urun_cikti_listesi" maxlength="8000">1) Kırsal Dijital Hizmetler Eğitim Programı (20 haftalık uygulama planı ve oturum akışları)
+2) Köy bazlı uygulama takvimi ve katılım çizelgeleri (300 kişilik CSV listesi dahil)
+3) Genişletilmiş Dijital Rehber Paketi: e-Devlet, e-Nabız, MHRS, Mobil Bankacılık, WhatsApp, Google Haritalar, YouTube, PTT, CİMER ve Diyanet uygulamaları için hazırlanan web tabanlı etkileşimli HTML kullanım kılavuzları
+4) Yaşlı ve düşük dijital okuryazarlık düzeyine uygun “kolay dil” broşür seti
+5) AI destekli sesli yönlendirme senaryoları ve örnek kullanım videoları
+6) Drama/rol yapma etkinlik kartları ve uygulama föyleri
+7) Akran rehberlik modeli: öğrenci dijital rehber görev tanımları ve izleme formları
+8) Köy muhtarları ile koordinasyon tutanakları ve duyuru materyalleri
+9) Ön test – son test dijital beceri ölçme formları
+10) Katılımcı geri bildirim anketleri ve memnuniyet analiz tablosu
+11) “Bağımsız işlem yapabilme” kontrol listesi (MHRS randevu, e-Devlet belge, e-Nabız sonuç görüntüleme)
+12) Proje kapanış değerlendirme raporu ve sürdürülebilirlik eylem planı
+13) Bilgilendirme afişleri, kısa tanıtım içerikleri ve örnek sosyal medya paylaşım metinleri
+14) Etik ve dijital vatandaşlık mini eğitim modülü (güvenli parola, dolandırıcılık farkındalığı, veri gizliliği)
+15) İlçe paylaşımı için çıktı dosyası (özet rapor, görsel kanıt listesi, ölçüm sonuçları)</textarea>
+          </div>
+
+          <div class="group" style="grid-column:1/-1">
+            <label>Açıklama (Yenilikçilik yönü dahil)</label>
+            <textarea name="aciklama" maxlength="10000">“Kırsal Kesimde Dijital Hizmetler” projesi, Mardin Mesleki ve Teknik Anadolu Lisesi koordinasyonunda, kırsalda yaşayan vatandaşların dijital kamu hizmetlerine erişimini artırmak amacıyla planlanmış ve 20 haftalık süreçte uygulanmıştır. Proje; e-Devlet, e-Nabız ve MHRS sistemlerinin yanı sıra günlük yaşamı kolaylaştıran Mobil Bankacılık, WhatsApp, Google Haritalar, PTT ve CİMER gibi uygulamaları da kapsayacak şekilde genişletilmiş, katılımcıların gerçek işlem yaparak bağımsız kullanım becerisi kazanmasına odaklanmıştır.
+
+Uygulama biçimi sahayla uyumlu şekilde kademeli yürütülmüştür:
+- Hazırlık ve ihtiyaç analizi: Köy muhtarlarıyla görüşmeler yapılarak yaş grubu, cihaz erişimi ve internet imkanları haritalandırılmıştır.
+- Eğitim ve uygulama: Küçük gruplar halinde, öğrenci rehber destekli uygulamalı oturumlar gerçekleştirilmiştir.
+- Yerinde rehberlik: Özellikle yaşlı katılımcılar için birebir destek masaları kurulmuş, adım adım tekrarlar yapılmıştır.
+- İzleme ve pekiştirme: Katılımcıların bağımsız işlem denemeleri kontrol listeleriyle takip edilmiş, eksik kazanımlar için telafi oturumları açılmıştır.
+
+Projede ön başvurudaki yöntemler (PBL, drama/rol yapma, oyunlaştırma, AI destekli sesli yönlendirme, tasarım odaklı düşünme, akran öğrenmesi) sahaya uygunlaştırılarak kullanılmıştır. Özellikle düşük okuryazarlık veya ileri yaş grubunda, sesli yönlendirme ve görsel kılavuzlar erişilebilirliği belirgin biçimde artırmıştır.
+
+Ölçme ve geri bildirim:
+- Ön test/son test karşılaştırmaları ile dijital işlem yeterliği ölçülmüştür.
+- Oturum sonu kısa geri bildirim formları ile içerik anlaşılabilirliği izlenmiştir.
+- “Bağımsız işlem yapabilme” göstergesi temel performans ölçütü olarak kullanılmıştır.
+- Katılımcı memnuniyeti, eğitimin pratik faydası ve tekrar ihtiyacı başlıklarında düzenli analiz yapılmıştır.
+
+Saha çıktıları:
+- Katılımcıların önemli bir bölümü sağlık (MHRS, e-Nabız) ve devlet (e-Devlet) işlemlerinin yanı sıra; görüntülü görüşme, konum paylaşma, fatura ödeme ve online sorgulama işlemlerini yardım almadan yapabilir düzeye gelmiştir.
+- Köylerde dijital hizmetlere yönelik çekingenlik azalmış, bilinçli kullanım ve güvenlik farkındalığı artmıştır.
+- Öğrenciler toplumsal sorumluluk, iletişim ve rehberlik becerileri yönünden gelişim göstermiştir.
+
+Yenilikçilik yönü:
+Projenin yenilikçi tarafı, teknoloji eğitimini yalnızca “öğretim” düzeyinde bırakmayıp “toplum içinde uygulama” modeline dönüştürmesidir. AI destekli sesli rehberlerin kullanılması, düşük dijital yeterlilik düzeyindeki katılımcılar için erişilebilirliği artırmıştır. Ayrıca dijital vatandaşlık ve teknoloji etiği (veri gizliliği, güvenli kullanım, dolandırıcılıktan korunma) proje akışına entegre edilerek ilçe değerlendirmesinde belirtilen geliştirme ihtiyacı doğrudan karşılanmıştır. Böylece proje, hem teknik beceri hem etik farkındalık üreten bütüncül bir modele dönüşmüştür.</textarea>
+          </div>
+
+          <div class="group" style="grid-column:1/-1">
+            <label>Yaygınlaştırma Linki</label>
+            <input type="url" name="yayginlasma_linki" maxlength="1000" value="https://www.meb.gov.tr" placeholder="https://..." pattern="https://.*" inputmode="url">
+            <div class="small">
+              Yapılan çalışmanın yaygınlaşıp yaygınlaşmadığını gösteren kamuya açık bağlantı.
+              Sadece <b>https://</b> ile başlayan adresler kabul edilir.
+            </div>
+          </div>
+
+          <div class="group" style="grid-column:1/-1">
+            <label>Değerlendirme (Rubrik)</label>
+            <div class="small">Her başlık altında 3 alt seçim vardır.</div>
+
+            <div class="od-card" data-od-section="">
+              <div class="od-head">
+                <div>
+                  <div class="od-title">Bilgi – Akıl ve Zihin Gelişimi</div>
+                  <div class="small">Düşünme, analiz, üretme becerileri</div>
+                </div>
+                <div class="od-score" data-score-out="">10.0 / 10</div>
+              </div>
+              <div class="ckrow">
+                <label><input type="checkbox" name="od_bilgi_c1" data-w="3.4" checked> Düşünme</label>
+                <label><input type="checkbox" name="od_bilgi_c2" data-w="3.3" checked> Analiz</label>
+                <label><input type="checkbox" name="od_bilgi_c3" data-w="3.3" checked> Üretme</label>
+              </div>
+              <div style="margin-top:10px">
+                <textarea name="od_bilgi_aciklama" maxlength="4000">Katılımcılar dijital kamu hizmetlerinin işleyişini kavrayarak işlem adımlarını neden-sonuç ilişkisi içinde değerlendirdi. Öğrenciler saha verilerini analiz ederek yaş grubu ve ihtiyaç düzeyine göre içerik üretti. Süreç sonunda hem katılımcılar hem öğrenci rehberler problem çözme, analiz etme ve yeni çözüm üretme becerilerinde gözle görülür gelişim gösterdi.</textarea>
+              </div>
+            </div>
+
+            <div class="od-card" data-od-section="" style="margin-top:12px">
+              <div class="od-head">
+                <div>
+                  <div class="od-title">Duygu – Kalp ve Ruh Gelişimi</div>
+                  <div class="small">Empati, estetik, değer odaklılık</div>
+                </div>
+                <div class="od-score" data-score-out="">10.0 / 10</div>
+              </div>
+              <div class="ckrow">
+                <label><input type="checkbox" name="od_duygu_c1" data-w="3.4" checked> Empati</label>
+                <label><input type="checkbox" name="od_duygu_c2" data-w="3.3" checked> Estetik duyarlılık</label>
+                <label><input type="checkbox" name="od_duygu_c3" data-w="3.3" checked> Değer odaklılık</label>
+              </div>
+              <div style="margin-top:10px">
+                <textarea name="od_duygu_aciklama" maxlength="4000">Uygulamalarda özellikle yaşlı bireylerin teknolojiye dair kaygılarını azaltacak empatik bir iletişim dili benimsendi. Estetik ve anlaşılır görsellerle desteklenen materyaller, öğrenme motivasyonunu artırdı. Toplumsal fayda odağı korunarak her katılımcının öğrenme hızına saygılı, değer temelli bir yaklaşım sürdürüldü.</textarea>
+              </div>
+            </div>
+
+            <div class="od-card" data-od-section="" style="margin-top:12px">
+              <div class="od-head">
+                <div>
+                  <div class="od-title">İrade – Disiplin ve Sorumluluk</div>
+                  <div class="small">Öz disiplin, süreklilik, gayret</div>
+                </div>
+                <div class="od-score" data-score-out="">10.0 / 10</div>
+              </div>
+              <div class="ckrow">
+                <label><input type="checkbox" name="od_irade_c1" data-w="3.4" checked> Öz disiplin</label>
+                <label><input type="checkbox" name="od_irade_c2" data-w="3.3" checked> Süreklilik</label>
+                <label><input type="checkbox" name="od_irade_c3" data-w="3.3" checked> Gayret</label>
+              </div>
+              <div style="margin-top:10px">
+                <textarea name="od_irade_aciklama" maxlength="4000">20 haftalık uygulama boyunca düzenli oturumlara devam sağlandı, aksayan noktalarda telafi planı uygulandı. Öğrenci rehberler görev paylaşımı ve takip sorumluluklarını disiplinli biçimde yürüttü. Katılımcılar tekrar eden uygulamalarla bağımsız işlem yapma konusunda kalıcı bir gayret ve süreklilik sergiledi.</textarea>
+              </div>
+            </div>
+
+            <div class="od-card" data-od-section="" style="margin-top:12px">
+              <div class="od-head">
+                <div>
+                  <div class="od-title">Ahlak – Davranış ve Tutum</div>
+                  <div class="small">Toplumsal sorumluluk, adalet anlayışı</div>
+                </div>
+                <div class="od-score" data-score-out="">10.0 / 10</div>
+              </div>
+              <div class="ckrow">
+                <label><input type="checkbox" name="od_ahlak_c1" data-w="3.4" checked> Toplumsal sorumluluk</label>
+                <label><input type="checkbox" name="od_ahlak_c2" data-w="3.3" checked> Adalet anlayışı</label>
+                <label><input type="checkbox" name="od_ahlak_c3" data-w="3.3" checked> Etik tutum / saygı</label>
+              </div>
+              <div style="margin-top:10px">
+                <textarea name="od_ahlak_aciklama" maxlength="4000">Proje, dijital erişimde fırsat eşitliğini önceleyen bir toplumsal sorumluluk anlayışıyla yürütüldü. Kişisel verilerin korunması, güvenli parola kullanımı ve doğru bilgiye erişim gibi etik ilkeler tüm oturumlara entegre edildi. Katılımcılarla iletişimde saygı, sabır ve adalet odaklı tutum temel ilke olarak benimsendi.</textarea>
+              </div>
+            </div>
+
+            <div class="od-card" data-od-section="" style="margin-top:12px">
+              <div class="od-head">
+                <div>
+                  <div class="od-title">Estetik – Güzellik ve Üretim Bilinci</div>
+                  <div class="small">Estetik bakış, özgünlük, üretim bilinci</div>
+                </div>
+                <div class="od-score" data-score-out="">10.0 / 10</div>
+              </div>
+              <div class="ckrow">
+                <label><input type="checkbox" name="od_estetik_c1" data-w="3.4" checked> Estetik bakış</label>
+                <label><input type="checkbox" name="od_estetik_c2" data-w="3.3" checked> Özgünlük</label>
+                <label><input type="checkbox" name="od_estetik_c3" data-w="3.3" checked> Üretim bilinci</label>
+              </div>
+              <div style="margin-top:10px">
+                <textarea name="od_estetik_aciklama" maxlength="4000">Eğitim içerikleri sade, anlaşılır ve görsel bütünlüğü güçlü materyallerle desteklendi. Yerel ihtiyaçlara göre uyarlanan özgün kılavuzlar ve sesli yönlendirme çözümleri, öğrenmeyi kolaylaştırdı. Üretim bilinci kapsamında öğrenciler yalnızca bilgi aktarmadı; sahada kullanılabilir, kalıcı ve nitelikli dijital rehberlik ürünleri ortaya koydu.</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+      </form>
+    </div>
+  </div>
+</div>
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

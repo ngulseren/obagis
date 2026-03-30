@@ -1,0 +1,503 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://obagis.net/yekta_ufuklar_sonuc.php?id=42
+Subject: =?utf-8?Q?YEKTA=20=E2=80=A2=20Sonu=C3=A7=20Raporu?=
+Date: Wed, 25 Mar 2026 12:13:48 +0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--p3zDNUurNY9lqbbQoaGbSdXpDX3oa8CwQELhkEnIXk----"
+
+
+------MultipartBoundary--p3zDNUurNY9lqbbQoaGbSdXpDX3oa8CwQELhkEnIXk----
+Content-Type: text/html
+Content-ID: <frame-BBA31D3DB13550C1A3DBC3A3A76CA4F1@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://obagis.net/yekta_ufuklar_sonuc.php?id=42
+
+<!DOCTYPE html><html lang=3D"tr"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-05b086cd-5ce6-4acf-acd6-df3d58f8d07d@mhtml.blink" />
+
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">
+<title>YEKTA =E2=80=A2 Sonu=C3=A7 Raporu</title>
+
+</head>
+<body>
+<div class=3D"container">
+
+  <div class=3D"header">
+    <div class=3D"left">
+      <b>YEKTA =E2=80=A2 Sonu=C3=A7 Raporu</b>
+      <div class=3D"small">Onayl=C4=B1 proje i=C3=A7in rapor: Taslak =E2=86=
+=92 =C4=B0l=C3=A7eye G=C3=B6nder</div>
+    </div>
+    <div style=3D"display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <span class=3D"pill">Okul: MARD=C4=B0N MESLEK=C4=B0 VE TEKN=C4=B0K AN=
+ADOLU L=C4=B0SES=C4=B0</span>
+      <span class=3D"pill">=C3=96=C4=9Fretmen: Nurettin G=C3=9CLSEREN</span=
+>
+      <span class=3D"pill">Ba=C5=9Fvuru ID: 42</span>
+      <span class=3D"pill">Rapor Durum: taslak</span>
+      <a class=3D"btn btn-muted" href=3D"https://obagis.net/yekta_ufuklar_l=
+iste.php">=E2=86=90 Listeye D=C3=B6n</a>
+    </div>
+  </div>
+
+ =20
+  <div class=3D"card">
+    <div class=3D"head">
+      <div style=3D"display:flex;gap:10px;align-items:center;flex-wrap:wrap=
+">
+        <b>Sonu=C3=A7 Raporu Formu</b>
+                  <span class=3D"badge badge-ok">D=C3=BCzenlenebilir</span>
+                      </div>
+      <div class=3D"small">Proje Ad=C4=B1 otomatik (onayl=C4=B1 ba=C5=9Fl=
+=C4=B1ktan).</div>
+    </div>
+
+    <div class=3D"body">
+      <form id=3D"mainForm" method=3D"post" enctype=3D"multipart/form-data"=
+ action=3D"https://obagis.net/yekta_ufuklar_sonuc.php?id=3D42">
+       =20
+
+        <div class=3D"grid">
+          <div class=3D"group">
+            <label>Okul Ad=C4=B1</label>
+            <div class=3D"readonlyBox">MARD=C4=B0N MESLEK=C4=B0 VE TEKN=C4=
+=B0K ANADOLU L=C4=B0SES=C4=B0</div>
+          </div>
+
+          <div class=3D"group">
+            <label>=C3=96=C4=9Fretmen Ad=C4=B1</label>
+            <div class=3D"readonlyBox">Nurettin G=C3=9CLSEREN</div>
+          </div>
+
+          <div class=3D"group" style=3D"grid-column:1/-1">
+            <label>Proje Ad=C4=B1 (Onayl=C4=B1)</label>
+            <div class=3D"readonlyBox">KIRSAL KES=C4=B0MDE D=C4=B0J=C4=B0TA=
+L H=C4=B0ZMETLER</div>
+          </div>
+
+          <div class=3D"group">
+            <label>Uygulama S=C3=BCresi</label>
+            <input type=3D"number" name=3D"uygulama_suresi" min=3D"1" max=
+=3D"3650" required=3D"" value=3D"" placeholder=3D"=C3=96rn: 4">
+            <div class=3D"small">Ger=C3=A7ekle=C5=9Fen s=C3=BCre.</div>
+          </div>
+
+          <div class=3D"group">
+            <label>Birim</label>
+                        <select name=3D"sure_birim" required=3D"">
+              <option value=3D"" disabled=3D"">Se=C3=A7iniz</option>
+              <option value=3D"gun" selected=3D"">G=C3=BCn</option>
+              <option value=3D"hafta">Hafta</option>
+            </select>
+          </div>
+
+          <div class=3D"group">
+            <label>Kat=C4=B1l=C4=B1mc=C4=B1 Say=C4=B1s=C4=B1</label>
+            <input type=3D"number" name=3D"katilimci_sayisi" min=3D"1" max=
+=3D"200000" required=3D"" value=3D"" placeholder=3D"=C3=96rn: 120">
+            <div class=3D"small">Etkinlikte yer alan toplam =C3=B6=C4=9Fren=
+ci/kat=C4=B1l=C4=B1mc=C4=B1.</div>
+          </div>
+
+          <div class=3D"group" style=3D"grid-column:1/-1">
+            <label>=C3=9Cr=C3=BCn / =C3=87=C4=B1kt=C4=B1 Listesi</label>
+            <textarea name=3D"urun_cikti_listesi" maxlength=3D"8000" placeh=
+older=3D"=C3=96rn: 1) Poster PDF 2) Video 3) Web sayfas=C4=B1 4) Sergi pano=
+su..."></textarea>
+          </div>
+
+          <div class=3D"group" style=3D"grid-column:1/-1">
+            <label>A=C3=A7=C4=B1klama (Yenilik=C3=A7ilik y=C3=B6n=C3=BC dah=
+il)</label>
+            <textarea name=3D"aciklama" maxlength=3D"10000" placeholder=3D"=
+L=C3=BCtfen =C5=9Funlar=C4=B1 yaz=C4=B1n:
+- S=C3=BCre=C3=A7 =C3=B6zeti ve uygulanma bi=C3=A7imi
+- =C3=96l=C3=A7=C3=BCm / geri bildirimler
+- Yenilik=C3=A7ilik y=C3=B6n=C3=BC: Bu proje neyi farkl=C4=B1 yapt=C4=B1, h=
+angi =C3=B6zg=C3=BCn y=C3=B6ntem/=C3=BCr=C3=BCn ortaya =C3=A7=C4=B1kt=C4=B1=
+?"></textarea>
+          </div>
+          <div class=3D"group" style=3D"grid-column:1/-1">
+  <label>Yayg=C4=B1nla=C5=9Ft=C4=B1rma Linki</label>
+  <input type=3D"url" name=3D"yayginlasma_linki" maxlength=3D"1000" value=
+=3D"" placeholder=3D"https://..." pattern=3D"https://.*" inputmode=3D"url">
+  <div class=3D"small">
+    Yap=C4=B1lan =C3=A7al=C4=B1=C5=9Fman=C4=B1n yayg=C4=B1nla=C5=9F=C4=B1p =
+yayg=C4=B1nla=C5=9Fmad=C4=B1=C4=9F=C4=B1n=C4=B1 g=C3=B6steren kamuya a=C3=
+=A7=C4=B1k ba=C4=9Flant=C4=B1.
+    Sadece <b>https://</b> ile ba=C5=9Flayan adresler kabul edilir.
+    =C3=96rn: haber sayfas=C4=B1, okul sitesi, payla=C5=9F=C4=B1m sayfas=C4=
+=B1, video linki.
+  </div>
+</div>
+          <!-- =C3=96z De=C4=9Ferlendirme -->
+          <div class=3D"group" style=3D"grid-column:1/-1">
+            <label>De=C4=9Ferlendirme (Rubrik)</label>
+            <div class=3D"small">
+              Her ba=C5=9Fl=C4=B1k alt=C4=B1nda 3 alt se=C3=A7im vard=C4=B1=
+r. Canl=C4=B1 puan g=C3=B6r=C3=BCn=C3=BCr; kay=C4=B1t s=C4=B1ras=C4=B1nda D=
+B=E2=80=99ye yaz=C4=B1l=C4=B1r.
+            </div>
+
+            <!-- Bilgi -->
+            <div class=3D"od-card" data-od-section=3D"">
+              <div class=3D"od-head">
+                <div>
+                  <div class=3D"od-title">Bilgi =E2=80=93 Ak=C4=B1l ve Zihi=
+n Geli=C5=9Fimi</div>
+                  <div class=3D"small">D=C3=BC=C5=9F=C3=BCnme, analiz, =C3=
+=BCretme becerileri</div>
+                </div>
+                <div class=3D"od-score" data-score-out=3D"">0.0 / 10</div>
+              </div>
+
+              <div class=3D"ckrow">
+                <label><input type=3D"checkbox" name=3D"od_bilgi_c1" data-w=
+=3D"3.4"> D=C3=BC=C5=9F=C3=BCnme</label>
+                <label><input type=3D"checkbox" name=3D"od_bilgi_c2" data-w=
+=3D"3.3"> Analiz</label>
+                <label><input type=3D"checkbox" name=3D"od_bilgi_c3" data-w=
+=3D"3.3"> =C3=9Cretme</label>
+              </div>
+
+              <div style=3D"margin-top:10px">
+                <textarea name=3D"od_bilgi_aciklama" maxlength=3D"4000" pla=
+ceholder=3D"Bilgi boyutu i=C3=A7in k=C4=B1sa a=C3=A7=C4=B1klama / =C3=B6rne=
+kler..."></textarea>
+              </div>
+            </div>
+
+            <!-- Duygu -->
+            <div class=3D"od-card" data-od-section=3D"" style=3D"margin-top=
+:12px">
+              <div class=3D"od-head">
+                <div>
+                  <div class=3D"od-title">Duygu =E2=80=93 Kalp ve Ruh Geli=
+=C5=9Fimi</div>
+                  <div class=3D"small">Empati, estetik, de=C4=9Fer odakl=C4=
+=B1l=C4=B1k</div>
+                </div>
+                <div class=3D"od-score" data-score-out=3D"">0.0 / 10</div>
+              </div>
+
+              <div class=3D"ckrow">
+                <label><input type=3D"checkbox" name=3D"od_duygu_c1" data-w=
+=3D"3.4"> Empati</label>
+                <label><input type=3D"checkbox" name=3D"od_duygu_c2" data-w=
+=3D"3.3"> Estetik duyarl=C4=B1l=C4=B1k</label>
+                <label><input type=3D"checkbox" name=3D"od_duygu_c3" data-w=
+=3D"3.3"> De=C4=9Fer odakl=C4=B1l=C4=B1k</label>
+              </div>
+
+              <div style=3D"margin-top:10px">
+                <textarea name=3D"od_duygu_aciklama" maxlength=3D"4000" pla=
+ceholder=3D"Duygu boyutu i=C3=A7in k=C4=B1sa a=C3=A7=C4=B1klama / =C3=B6rne=
+kler..."></textarea>
+              </div>
+            </div>
+
+            <!-- =C4=B0rade -->
+            <div class=3D"od-card" data-od-section=3D"" style=3D"margin-top=
+:12px">
+              <div class=3D"od-head">
+                <div>
+                  <div class=3D"od-title">=C4=B0rade =E2=80=93 Disiplin ve =
+Sorumluluk</div>
+                  <div class=3D"small">=C3=96z disiplin, s=C3=BCreklilik, g=
+ayret</div>
+                </div>
+                <div class=3D"od-score" data-score-out=3D"">0.0 / 10</div>
+              </div>
+
+              <div class=3D"ckrow">
+                <label><input type=3D"checkbox" name=3D"od_irade_c1" data-w=
+=3D"3.4"> =C3=96z disiplin</label>
+                <label><input type=3D"checkbox" name=3D"od_irade_c2" data-w=
+=3D"3.3"> S=C3=BCreklilik</label>
+                <label><input type=3D"checkbox" name=3D"od_irade_c3" data-w=
+=3D"3.3"> Gayret</label>
+              </div>
+
+              <div style=3D"margin-top:10px">
+                <textarea name=3D"od_irade_aciklama" maxlength=3D"4000" pla=
+ceholder=3D"=C4=B0rade boyutu i=C3=A7in k=C4=B1sa a=C3=A7=C4=B1klama / =C3=
+=B6rnekler..."></textarea>
+              </div>
+            </div>
+
+            <!-- Ahlak -->
+            <div class=3D"od-card" data-od-section=3D"" style=3D"margin-top=
+:12px">
+              <div class=3D"od-head">
+                <div>
+                  <div class=3D"od-title">Ahlak =E2=80=93 Davran=C4=B1=C5=
+=9F ve Tutum</div>
+                  <div class=3D"small">Toplumsal sorumluluk, adalet anlay=
+=C4=B1=C5=9F=C4=B1</div>
+                </div>
+                <div class=3D"od-score" data-score-out=3D"">0.0 / 10</div>
+              </div>
+
+              <div class=3D"ckrow">
+                <label><input type=3D"checkbox" name=3D"od_ahlak_c1" data-w=
+=3D"3.4"> Toplumsal sorumluluk</label>
+                <label><input type=3D"checkbox" name=3D"od_ahlak_c2" data-w=
+=3D"3.3"> Adalet anlay=C4=B1=C5=9F=C4=B1</label>
+                <label><input type=3D"checkbox" name=3D"od_ahlak_c3" data-w=
+=3D"3.3"> Etik tutum / sayg=C4=B1</label>
+              </div>
+
+              <div style=3D"margin-top:10px">
+                <textarea name=3D"od_ahlak_aciklama" maxlength=3D"4000" pla=
+ceholder=3D"Ahlak boyutu i=C3=A7in k=C4=B1sa a=C3=A7=C4=B1klama / =C3=B6rne=
+kler..."></textarea>
+              </div>
+            </div>
+
+            <!-- Estetik -->
+            <div class=3D"od-card" data-od-section=3D"" style=3D"margin-top=
+:12px">
+              <div class=3D"od-head">
+                <div>
+                  <div class=3D"od-title">Estetik =E2=80=93 G=C3=BCzellik v=
+e =C3=9Cretim Bilinci</div>
+                  <div class=3D"small">Estetik bak=C4=B1=C5=9F, =C3=B6zg=C3=
+=BCnl=C3=BCk, =C3=BCretim bilinci</div>
+                </div>
+                <div class=3D"od-score" data-score-out=3D"">0.0 / 10</div>
+              </div>
+
+              <div class=3D"ckrow">
+                <label><input type=3D"checkbox" name=3D"od_estetik_c1" data=
+-w=3D"3.4"> Estetik bak=C4=B1=C5=9F</label>
+                <label><input type=3D"checkbox" name=3D"od_estetik_c2" data=
+-w=3D"3.3"> =C3=96zg=C3=BCnl=C3=BCk</label>
+                <label><input type=3D"checkbox" name=3D"od_estetik_c3" data=
+-w=3D"3.3"> =C3=9Cretim bilinci</label>
+              </div>
+
+              <div style=3D"margin-top:10px">
+                <textarea name=3D"od_estetik_aciklama" maxlength=3D"4000" p=
+laceholder=3D"Estetik boyutu i=C3=A7in k=C4=B1sa a=C3=A7=C4=B1klama / =C3=
+=B6rnekler..."></textarea>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Ekler -->
+          <div class=3D"group" style=3D"grid-column:1/-1">
+            <label>G=C3=B6rsel / Dosya Y=C3=BCkleme (en fazla 5 dosya)</lab=
+el>
+
+            <div id=3D"dropZone" class=3D"dropzone ">
+              <div style=3D"font-weight:950">=F0=9F=93=8E Dosyalar=C4=B1 bu=
+raya s=C3=BCr=C3=BCkle-b=C4=B1rak</div>
+              <div class=3D"small">
+                (PDF/JPG/PNG/DOC/DOCX: max 10MB =E2=80=A2 MP4: max 50MB)<br=
+>
+                Mevcut ek: <b>0</b> =E2=80=A2 Kalan ek hakk=C4=B1: <b id=3D=
+"kalanHakUI">5</b>
+              </div>
+              <div style=3D"margin-top:10px;display:flex;gap:10px;flex-wrap=
+:wrap;align-items:center">
+                <button class=3D"btn btn-muted" type=3D"button" id=3D"pickF=
+ilesBtn">=F0=9F=93=81 Dosya Se=C3=A7</button>
+                <span class=3D"small" id=3D"pickedInfo">Se=C3=A7ili dosya y=
+ok</span>
+              </div>
+            </div>
+
+            <input id=3D"fileInput" type=3D"file" name=3D"ekler[]" multiple=
+=3D"" accept=3D".pdf,.jpg,.jpeg,.png,.doc,.docx,.mp4" style=3D"display:none=
+">
+
+            <div class=3D"filelist" id=3D"pickedList" style=3D"display:none=
+"></div>
+
+                          <div class=3D"small">=C3=96nce raporu taslak kayd=
+edin; ard=C4=B1ndan ek y=C3=BCkleyebilirsiniz.</div>
+                      </div>
+
+        </div>
+
+        <div class=3D"hr"></div>
+
+       =20
+        <div class=3D"btns">
+                      <button class=3D"btn btn-primary" type=3D"submit" nam=
+e=3D"action" value=3D"save">=F0=9F=92=BE Taslak Kaydet</button>
+            <button class=3D"btn btn-success" type=3D"submit" name=3D"actio=
+n" value=3D"submit">
+              =F0=9F=93=A8 =C4=B0l=C3=A7eye G=C3=B6nder
+            </button>
+                  </div>
+      </form>
+
+     =20
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</body></html>
+------MultipartBoundary--p3zDNUurNY9lqbbQoaGbSdXpDX3oa8CwQELhkEnIXk----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-05b086cd-5ce6-4acf-acd6-df3d58f8d07d@mhtml.blink
+
+@charset "utf-8";
+
+:root { --primary: #2563eb; --secondary: #7e22ce; --accent: #06b6d4; --succ=
+ess: #10b981; --error: #ef4444; --warning: #f59e0b; --bg: #0f172a; --card: =
+#1e293b; --card2: #334155; --text: #f8fafc; --muted: #94a3b8; --border: #37=
+4151; --sh: 0 10px 25px rgba(0,0,0,.35); --t: .2s ease; }
+
+* { box-sizing: border-box; }
+
+body { margin: 0px; font-family: Inter, system-ui, -apple-system, "Segoe UI=
+", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+
+.container { max-width: 1100px; margin: 0px auto; padding: 18px; }
+
+.header { background: linear-gradient(135deg,var(--primary),var(--secondary=
+)); border-radius: 16px; padding: 16px; box-shadow: var(--sh); display: fle=
+x; justify-content: space-between; align-items: center; gap: 12px; flex-wra=
+p: wrap; }
+
+.header .left b { font-size: 1.15rem; }
+
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 1=
+0px; border-radius: 999px; background: rgba(255, 255, 255, 0.18); font-weig=
+ht: 900; font-size: 0.82rem; }
+
+.card { margin-top: 14px; background: var(--card); border: 1px solid var(--=
+border); border-radius: 16px; box-shadow: var(--sh); overflow: hidden; }
+
+.card .head { background: var(--card2); padding: 12px 14px; border-bottom: =
+1px solid var(--border); display: flex; justify-content: space-between; ali=
+gn-items: center; gap: 10px; flex-wrap: wrap; }
+
+.card .body { padding: 14px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260p=
+x, 1fr)); gap: 12px; }
+
+.group { display: flex; flex-direction: column; gap: 6px; }
+
+label { font-weight: 900; font-size: 0.86rem; }
+
+input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 1=
+2px; background: rgba(255, 255, 255, 0.06); border: 1px solid var(--border)=
+; color: var(--text); outline: none; transition: var(--t); }
+
+textarea { min-height: 110px; resize: vertical; }
+
+input:focus, select:focus, textarea:focus { border-color: var(--primary); b=
+ox-shadow: rgba(37, 99, 235, 0.25) 0px 0px 0px 3px; }
+
+select option { background: rgb(255, 255, 255); color: rgb(17, 17, 17); }
+
+input:disabled, select:disabled, textarea:disabled { opacity: 0.75; cursor:=
+ not-allowed; }
+
+.small { color: var(--muted); font-size: 0.82rem; line-height: 1.35; }
+
+.hr { height: 1px; background: var(--border); margin: 14px 0px; }
+
+.btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-en=
+d; margin-top: 10px; }
+
+.btn { border: 0px; border-radius: 12px; padding: 10px 12px; font-weight: 9=
+50; cursor: pointer; transition: var(--t); display: inline-flex; align-item=
+s: center; gap: 8px; text-decoration: none; white-space: nowrap; }
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary { background: var(--primary); color: rgb(255, 255, 255); }
+
+.btn-success { background: var(--success); color: rgb(6, 38, 28); }
+
+.btn-muted { background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255=
+); border: 1px solid var(--border); }
+
+.btn-danger { background: rgba(239, 68, 68, 0.14); color: rgb(254, 202, 202=
+); border: 1px solid rgba(239, 68, 68, 0.35); }
+
+.alert { margin-top: 12px; padding: 12px 14px; border-radius: 14px; border:=
+ 1px solid var(--border); display: flex; gap: 10px; }
+
+.alert.ok { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 18=
+5, 129, 0.28); }
+
+.alert.err { background: rgba(239, 68, 68, 0.12); border-color: rgba(239, 6=
+8, 68, 0.28); }
+
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px =
+10px; border-radius: 999px; font-weight: 950; font-size: 0.82rem; border: 1=
+px solid rgba(255, 255, 255, 0.18); }
+
+.badge-lock { background: rgba(245, 158, 11, 0.14); border-color: rgba(245,=
+ 158, 11, 0.35); color: rgb(252, 211, 77); }
+
+.badge-ok { background: rgba(16, 185, 129, 0.14); border-color: rgba(16, 18=
+5, 129, 0.35); color: rgb(110, 231, 183); }
+
+.badge-info { background: rgba(6, 182, 212, 0.14); border-color: rgba(6, 18=
+2, 212, 0.35); color: rgb(103, 232, 249); }
+
+.dropzone { border: 2px dashed rgba(255, 255, 255, 0.22); border-radius: 16=
+px; padding: 14px; background: rgba(255, 255, 255, 0.04); transition: var(-=
+-t); }
+
+.dropzone.dz-over { border-color: var(--accent); box-shadow: rgba(6, 182, 2=
+12, 0.18) 0px 0px 0px 3px; }
+
+.dropzone.dz-disabled { opacity: 0.6; pointer-events: none; }
+
+.filelist { display: flex; flex-direction: column; gap: 10px; margin-top: 1=
+0px; }
+
+.fileitem { display: flex; align-items: center; justify-content: space-betw=
+een; gap: 10px; flex-wrap: wrap; padding: 10px 12px; border: 1px solid var(=
+--border); border-radius: 14px; background: rgba(255, 255, 255, 0.04); }
+
+.filemeta { display: flex; flex-direction: column; gap: 2px; }
+
+.filemeta span { color: var(--muted); font-size: 0.82rem; }
+
+.readonlyBox { border: 1px dashed rgba(255, 255, 255, 0.18); padding: 10px =
+12px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); color: va=
+r(--muted); font-size: 0.86rem; line-height: 1.35; }
+
+.od-card { border: 1px solid var(--border); border-radius: 14px; background=
+: rgba(255, 255, 255, 0.04); padding: 12px; }
+
+.od-head { display: flex; align-items: flex-start; justify-content: space-b=
+etween; gap: 10px; flex-wrap: wrap; }
+
+.od-title { font-weight: 950; }
+
+.od-score { font-weight: 950; color: rgb(167, 243, 208); background: rgba(1=
+6, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); padding: 5p=
+x 10px; border-radius: 999px; }
+
+.ckrow { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+.ckrow label { font-weight: 800; font-size: 0.84rem; display: flex; align-i=
+tems: center; gap: 8px; border: 1px solid rgba(255, 255, 255, 0.12); paddin=
+g: 8px 10px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); }
+
+.ckrow input { width: auto; }
+------MultipartBoundary--p3zDNUurNY9lqbbQoaGbSdXpDX3oa8CwQELhkEnIXk------

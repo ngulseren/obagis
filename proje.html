@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artuklu Kırsalı - Köy Bazlı Uygulama Takvimi ve Katılım Çizelgesi (300 Kişi)</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --head: #0f766e;
+      --head2: #115e59;
+      --accent: #0ea5e9;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1400px;
+      margin: 24px auto;
+      padding: 0 16px 32px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .head {
+      background: linear-gradient(135deg, var(--head), var(--head2));
+      color: #fff;
+      padding: 18px;
+    }
+
+    .head h1 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      letter-spacing: 0.2px;
+    }
+
+    .head p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    .meta {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      background: #f9fafb;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: 72vh;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1400px;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #ecfeff;
+      color: #0f172a;
+      border-bottom: 2px solid #a5f3fc;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 8px;
+      vertical-align: top;
+      font-size: 0.83rem;
+    }
+
+    tbody tr:nth-child(even) { background: #fcfcfd; }
+    tbody tr:hover { background: #f0f9ff; }
+
+    .center { text-align: center; }
+    .muted { color: var(--muted); }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0f2fe;
+      color: #075985;
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .footer-note {
+      padding: 12px 18px;
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: #fafafa;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .wrap { margin: 0; max-width: none; padding: 0; }
+      .card { border: none; box-shadow: none; border-radius: 0; }
+      .table-wrap { max-height: none; overflow: visible; }
+      thead th { position: static; }
+    }
+  </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+  <div class="wrap">
+    <section class="card">
+      <header class="head">
+        <h1>Mardin / Artuklu Kırsalı - Köy Bazlı Uygulama Takvimi ve Katılım Çizelgesi (300 Katılımcı)</h1>
+        <p>Proje: Kırsal Kesimde Dijital Hizmetler • Form türü: Anonim, doldurulabilir saha çizelgesi • Kapsam: 15 Köy Grubu</p>
+      </header>
+
+      <div class="meta">
+        <div><b>İl:</b> Mardin</div>
+        <div><b>İlçe:</b> Artuklu</div>
+        <div><b>Planlanan Toplam Katılımcı:</b> 300</div>
+        <div><b>Tablo Tarihi:</b> 26.03.2026</div>
+      </div>
+
+      <div class="table-wrap">
+        <table aria-label="Köy bazlı katılım çizelgesi">
+          <thead>
+            <tr>
+              <th class="center">Sıra</th>
+              <th>Köy Adı</th>
+              <th>Katılımcı Kodu</th>
+              <th>Yaş Grubu</th>
+              <th>Cinsiyet</th>
+              <th>Öğrenci/Veli</th>
+              <th>Oturum Tarihi</th>
+              <th>Katılım Durumu</th>
+              <th>İmza</th>
+              <th>Not</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- JavaScript ile doldurulacak -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer-note">
+        Not: Bu çizelge kişisel veri içermeyen, saha kullanımına uygun anonim şablondur. Katılımcı isim/kimlik bilgileri yerine kod kullanılır.
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const villages = [
+      "KABALA", "YALIM", "ORTAKÖY", "GÖKÇE", "KUMLU", 
+      "YAYLABAŞI", "ACAR", "AKBAĞ", "AMBAR", "ARPATEPE",
+      "AVCILAR", "BAĞLICA", "CEVİZLİ", "ÇATAK", "ERYERİ"
+    ];
+    
+    // Her köye 20'şer kişi düşecek şekilde dağılım (15 köy * 20 kişi = 300 kişi)
+    const roles = [
+      { age: "13-17", role: "Öğrenci" },
+      { age: "13-17", role: "Öğrenci" },
+      { age: "13-17", role: "Öğrenci" },
+      { age: "13-17", role: "Öğrenci" },
+      { age: "18-25", role: "Genç" },
+      { age: "18-25", role: "Genç" },
+      { age: "18-25", role: "Genç" },
+      { age: "26-40", role: "Veli" },
+      { age: "26-40", role: "Veli" },
+      { age: "26-40", role: "Veli" },
+      { age: "26-40", role: "Veli" },
+      { age: "26-40", role: "Veli" },
+      { age: "41-60", role: "Veli" },
+      { age: "41-60", role: "Veli" },
+      { age: "41-60", role: "Veli" },
+      { age: "41-60", role: "Veli" },
+      { age: "60+", role: "Yetişkin" },
+      { age: "60+", role: "Yetişkin" },
+      { age: "60+", role: "Yetişkin" },
+      { age: "60+", role: "Yetişkin" }
+    ];
+
+    const tbody = document.getElementById('tableBody');
+    let html = '';
+
+    let counter = 1;
+    
+    // 15 Köy döngüsü
+    for (let i = 0; i < villages.length; i++) {
+        const village = villages[i];
+        
+        // Her köy için 20 kişi
+        for (let j = 0; j < 20; j++) {
+            const code = 'K' + String(counter).padStart(3, '0');
+            const roleData = roles[j % roles.length]; // Rolleri döngüsel kullan
+            
+            html += `<tr>
+                <td class="center">${counter}</td>
+                <td><span class="pill">${village}</span></td>
+                <td>${code}</td>
+                <td>${roleData.age}</td>
+                <td>K/E</td>
+                <td>${roleData.role}</td>
+                <td>__/__/2026</td>
+                <td>Katıldı/Katılmadı</td>
+                <td>__________</td>
+                <td class="muted">-</td>
+            </tr>`;
+            counter++;
+        }
+    }
+
+    tbody.innerHTML = html;
+  </script>
+</body</div>>
+</html>
+<div class="main-content-wrapper">
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+</div>
+<script src="layout.js"></script>
+</body>
+</html>

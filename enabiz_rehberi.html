@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Nabız Kullanım Rehberi - Kişisel Sağlık Sistemi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #D32F2F; /* e-Nabız Red tone */
+            --secondary-color: #2c3e50;
+            --bg-color: #fce4ec; /* Light pinkish bg */
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--primary-color);
+        }
+
+        .card h2 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .instruction-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff0f3;
+            border-radius: 10px;
+        }
+
+        .instruction-box i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .important-note {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #bbdefb;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .button-mock {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 5px 0;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .screen-mockup {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+            margin: 20px 0;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        ul li i {
+            color: var(--primary-color);
+            margin-right: 15px;
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            background: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2em; }
+            .card { padding: 20px; }
+            .instruction-box { flex-direction: column; text-align: center; }
+            .instruction-box i { margin-bottom: 15px; }
+        }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+
+<header>
+    <i class="fas fa-heartbeat" style="font-size: 3em; margin-bottom: 15px;"></i>
+    <h1>e-Nabız</h1>
+    <p>Kişisel Sağlık Sisteminize Erişim Rehberi</p>
+</header>
+
+<div class="container">
+
+    <!-- Tanıtım Kartı -->
+    <div class="card">
+        <h2><i class="fas fa-info-circle"></i> e-Nabız Nedir?</h2>
+        <p>
+            e-Nabız, sağlık bilgilerinizi (tahlil sonuçları, ilaçlar, doktor ziyaretleri) görebileceğiniz, devletin resmi sağlık uygulamasıdır. 
+            Doktora gitmeden önceki sonuçlarınıza bakabilir veya kalp, şeker, tansiyon gibi bilgilerinizi takip edebilirsiniz.
+        </p>
+    </div>
+
+    <!-- Adım 1: Giriş Yapma -->
+    <div class="card">
+        <h2><span class="step-number">1</span> Sisteme Nasıl Girilir?</h2>
+        <p>En kolayı <strong>e-Devlet şifrenizle</strong> girmektir. Ayrıca üyelik açmanıza gerek yoktur.</p>
+        
+        <div class="instruction-box">
+            <i class="fas fa-mouse-pointer"></i>
+            <div>
+                <strong>Adresi Açın</strong> <br>
+                İnternet tarayıcınıza <code>www.enabiz.gov.tr</code> yazın.
+            </div>
+        </div>
+
+        <div class="instruction-box">
+            <i class="fas fa-key"></i>
+            <div>
+                <strong>e-Devlet ile Giriş Düğmesi</strong> <br>
+                Sayfanın üstünde veya ortasında kırmızı renkli <strong>"e-Devlet ile Giriş"</strong> düğmesine tıklayın.
+                Sizi e-Devlet şifre ekranına yönlendirecektir.
+            </div>
+        </div>
+        
+        <div class="important-note">
+            <i class="fas fa-lightbulb"></i> <strong>İpucu:</strong> Giriş yaptıktan sonra ilk defa giriyorsanız, sistem size boy, kilo ve kan grubu gibi temel bilgilerinizi sorabilir.
+        </div>
+    </div>
+
+    <!-- Adım 2: Neler Yapabilirsiniz? -->
+    <div class="card">
+        <h2><span class="step-number">2</span> Hangi Bilgileri Görebilirsiniz?</h2>
+        <p>Giriş yaptığınızda renkli kutular göreceksiniz. İşte en önemlileri:</p>
+        <ul>
+            <li>
+                <i class="fas fa-vial"></i>
+                <div>
+                    <strong>Tahlillerim (Sonuçları Görün)</strong><br>
+                    Hastanede kan veya idrar tahlili verdiyseniz, sonuçları çıkınca kağıt beklemeden buradan görebilirsiniz.
+                </div>
+            </li>
+            <li>
+                <i class="fas fa-pills"></i>
+                <div>
+                    <strong>Reçetelerim (İlaç Kodları)</strong><br>
+                    Doktorun yazdığı ilaçları ve eczaneye söyleyeceğiniz <strong>Reçete Numarasını</strong> (kodunu) burada bulabilirsiniz.
+                </div>
+            </li>
+            <li>
+                <i class="fas fa-user-md"></i>
+                <div>
+                    <strong>Ziyaretlerim</strong><br>
+                    Hangi tarihte hangi hastaneye ve doktora gittiğinizi geçmişe dönük olarak listeler.
+                </div>
+            </li>
+            <li>
+                <i class="fas fa-x-ray"></i>
+                <div>
+                    <strong>Radyolojik Görüntülerim</strong><br>
+                    Çekilen röntgen, MR veya tomografi filmlerini buradan görebilirsiniz.
+                </div>
+            </li>
+            <li>
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <strong>Randevu Al</strong><br>
+                    Hastaneden randevu almak isterseniz sizi MHRS (Merkezi Hekim Randevu Sistemi) ekranına yönlendirir.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Telefondan Kullanım -->
+    <div class="card">
+        <h2><i class="fas fa-mobile-alt"></i> Telefonda Kullanmak Daha Kolay!</h2>
+        <p>Akıllı telefonunuz varsa, "Uygulama Mağazası"ndan (App Store veya Google Play) <strong>e-Nabız</strong> uygulamasını indirebilirsiniz.</p>
+        
+        <div class="instruction-box">
+            <i class="fas fa-download"></i>
+            <div>
+                <strong>Uygulamayı İndirin</strong> <br>
+                Telefondan girmek, her seferinde şifre yazmak yerine parmak izi veya yüz tanıma ile açıldığı için yaşlılarımız için daha pratiktir.
+            </div>
+        </div>
+    </div>
+
+    <!-- Acil Durum -->
+    <div class="card" style="border-left-color: #d9534f;">
+        <h2><i class="fas fa-exclamation-circle"></i> Acil Durum Çantası</h2>
+        <p>e-Nabız'da <strong>"Acil Durum Bilgilerim"</strong> kısmına, varsa kronik hastalıklarınızı veya sürekli kullandığınız ilaçları eklerseniz, acil bir durumda doktorlar bu bilgilere hızlıca ulaşabilir.</p>
+    </div>
+
+</div>
+
+
+
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

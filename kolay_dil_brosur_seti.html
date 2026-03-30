@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Yaşam Kolay Dil Broşür Seti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --card-white: #ffffff;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --accent-orange: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0;
+            color: #111827;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-top: 10px;
+        }
+
+        /* Broşür Izgarası */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Broşür Kart Tasarımı */
+        .brochure-card {
+            background: var(--card-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid #e5e7eb;
+        }
+
+        .brochure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-header {
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            background: #e5e7eb;
+            color: #374151;
+            min-width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-right: 15px;
+            margin-top: 2px;
+            font-size: 1.1rem;
+        }
+
+        .step-text {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #4b5563;
+        }
+
+        .step-text strong {
+            color: #111827;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .warning-box {
+            background: #fef2f2;
+            border-left: 5px solid var(--accent-red);
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #991b1b;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 50px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Renk Temaları */
+        .theme-blue .card-header { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .theme-blue .step-num { color: #2563eb; background: #dbeafe; }
+        
+        .theme-red .card-header { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .theme-red .step-num { color: #dc2626; background: #fee2e2; }
+
+        .theme-purple .card-header { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+        .theme-purple .step-num { color: #7c3aed; background: #ede9fe; }
+
+        .theme-green .card-header { background: linear-gradient(135deg, #059669, #10b981); }
+        .theme-green .step-num { color: #059669; background: #d1fae5; }
+
+        .theme-orange .card-header { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .theme-orange .step-num { color: #d97706; background: #fef3c7; }
+
+        .theme-dark .card-header { background: linear-gradient(135deg, #1f2937, #374151); }
+        .theme-dark .step-num { color: #1f2937; background: #f3f4f6; }
+
+        @media print {
+            body { background: white; }
+            .grid { display: block; }
+            .brochure-card { page-break-inside: avoid; margin-bottom: 30px; box-shadow: none; border: 2px solid #ddd; }
+        }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+
+    <div class="header">
+        <h1>Dijital Yaşam Rehberi</h1>
+        <p>Hayatınızı Kolaylaştıracak İpuçları • Kolay Anlatım</p>
+    </div>
+
+    <div class="grid">
+
+        <!-- KART 1: GÜVENLİK -->
+        <div class="brochure-card theme-red">
+            <div class="card-header">
+                <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                <div class="card-title">GÜVENLİK</div>
+                <div>Önce Bunu Okuyun!</div>
+            </div>
+            <div class="card-body">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Şifre Sırdır</strong>
+                        Şifrenizi kimseye söylemeyin. Telefonda bankacı veya polis şifre istemez.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>"Evet" Demeyin</strong>
+                        Tanımadığınız numaradan gelen "Para kazandınız" mesajlarına inanmayın.
+                    </div>
+                </div>
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Unutmayın:</strong> Devlet sizden telefonda para istemez.
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 2: E-DEVLET -->
+        <div class="brochure-card theme-blue">
+            <div class="card-header">
+                <div class="icon-circle"><i class="fas fa-star-and-crescent"></i></div>
+                <div class="card-title">E-DEVLET</div>
+                <div>Devlet Kapısı</div>
+            </div>
+            <div class="card-body">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>PTT'ye Gidin</strong>
+                        Kimliğinizle PTT'den zarf içinde şifre alın.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Giriş Yapın</strong>
+                        Bilgisayara "e-Devlet" yazın. TC No ve şifrenizi girin.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Arama Yapın</strong>
+                        "Tapu", "Borç", "İkametgah" ne lazımsa arama kutusuna yazın.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 3: MHRS (RANDEVU) -->
+        <div class="brochure-card theme-purple">
+            <div class="card-header">
+                <div class="icon-circle"><i class="fas fa-hospital-user"></i></div>
+                <div class="card-title">HASTANE</div>
+                <div>Randevu Alma</div>
+            </div>
+            <div class="card-body">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Alo 182</strong>
+                        En kolayı telefonu açıp 1-8-2 tuşlarına basmaktır. Konuşarak randevu alabilirsiniz.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>İptal Etme</strong>
+                        Gidemeyecekseniz mutlaka iptal edin. Başkasının hakkına girmeyin.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Saatinde Gidin</strong>
+                        Randevu saatinizden 15 dakika önce hastanede olun.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 4: E-NABIZ -->
+        <div class="brochure-card theme-red">
+            <div class="card-header" style="background: linear-gradient(135deg, #ef5350, #c62828);">
+                <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+                <div class="card-title">E-NABIZ</div>
+                <div>Tahlil Sonuçları</div>
+            </div>
+            <div class="card-body">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Sonuç Öğrenme</strong>
+                        Kan verdikten sonra hastanede beklemeyin. Eve gidince buradan bakın.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>İlaçlar</strong>
+                        Doktorun yazdığı ilaçları ve reçete numarasını buradan görün.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 5: WHATSAPP -->
+        <div class="brochure-card theme-green">
+            <div class="card-header">
+                <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                <div class="card-title">WHATSAPP</div>
+                <div>Görüntülü Konuşma</div>
+            </div>
+            <div class="card-body">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Kamerayı Aç</strong>
+                        Çocuğunuzun ismine tıklayın. Sağ üstteki "Kamera" resmine basın.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Yüzünü Gör</strong>
+                        Telefonu yüzünüze tutun. Hasret giderin.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Resim Yolla</strong>
+                        Kamera resmine basıp bahçenizin, çiçeğinizin fotoğrafını çekip yollayın.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KART 6: BANKA -->
+        <div class="brochure-card theme-dark">
+            <div class="card-header">
+                <div class="icon-circle"><i class="fas fa-wallet"></i></div>
+                <div class="card-title">BANKA</div>
+                <div>Maaş Hesabı</div>
+            </div>
+            <div class="card-body">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Bakiye</strong>
+                        "Hesaplarım" kısmına basın. Maaşınızın yatıp yatmadığını oradan görün.
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Fatura</strong>
+                        Elektrik faturası ödemek için sıraya girmeyin. "Ödemeler" menüsünü kullanın.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        <p>© 2026 Artuklu Kırsal Kalkınma Projesi • Yetişkin Eğitim Materyalleri</p>
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

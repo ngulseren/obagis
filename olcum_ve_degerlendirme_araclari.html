@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ölçme ve Değerlendirme Araçları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; background: #e0e0e0; padding: 40px; margin: 0; }
+        .page-container { max-width: 210mm; margin: 0 auto; background: white; padding: 25mm; box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-height: 297mm; position: relative; }
+        
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; color: #333; margin-top: 0; }
+        h1 { text-align: center; border-bottom: 2px solid #000; padding-bottom: 20px; margin-bottom: 40px; }
+        .section-header { background: #eee; padding: 10px; margin: 30px 0 15px; border-left: 5px solid #2980b9; font-weight: bold; font-size: 1.2rem; }
+
+        .form-row { margin-bottom: 15px; display: flex; align-items: center; }
+        .form-label { width: 40%; font-weight: bold; }
+        .form-input { width: 60%; border-bottom: 1px dotted #000; height: 30px; }
+
+        .survey-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .survey-table th, .survey-table td { border: 1px solid #999; padding: 8px; text-align: center; vertical-align: middle; font-size: 10pt; }
+        .survey-table th { background: #f2f2f2; }
+        .survey-table tr:nth-child(even) { background: #fafafa; }
+        .survey-table td.left-align { text-align: left; padding-left: 10px; }
+
+        .checklist-item { margin-bottom: 10px; font-size: 1.1rem; }
+        .checklist-box { display: inline-block; width: 20px; height: 20px; border: 2px solid #333; margin-right: 10px; vertical-align: middle; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page-container { box-shadow: none; margin: 0; width: 100%; page-break-after: always; padding: 10mm; }
+            .no-print { display: none; }
+        }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+
+    <!-- SAYFA 1: 9. MADDE (ÖN-SON TEST) -->
+    <div class="page-container">
+        <h1>9. DİJİTAL BECERİ ÖLÇME FORMU (ÖN TEST / SON TEST)</h1>
+        <p><em>Not: Bu form, eğitim öncesinde ve sonrasında aynı katılımcıya uygulanarak gelişim ölçülecektir.</em></p>
+        
+        <div class="form-row">
+            <div class="form-label">Adı Soyadı:</div>
+            <div class="form-input"></div>
+        </div>
+        <div class="form-row">
+            <div class="form-label">Yaş Aralığı:</div>
+            <div class="form-input" style="border:none;">[ ] 50-60  [ ] 60-70  [ ] 70+</div>
+        </div>
+        <div class="form-row">
+            <div class="form-label">Uygulama Dönemi:</div>
+            <div class="form-input" style="border:none;">[ ] EĞİTİM BAŞI (Ön Test)   [ ] EĞİTİM SONU (Son Test)</div>
+        </div>
+
+        <table class="survey-table">
+            <thead>
+                <tr>
+                    <th width="50%">BECERİ İFADESİ</th>
+                    <th width="10%">Hiç Yapamam (1)</th>
+                    <th width="10%">Yardımla Yaparım (2)</th>
+                    <th width="10%">Kısmen Yaparım (3)</th>
+                    <th width="10%">Rahatça Yaparım (4)</th>
+                    <th width="10%">Başkasına Öğretirim (5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="left-align">1. Akıllı telefonumu açıp kapatabilirim, şarja takabilirim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">2. İnternete (Wi-Fi veya Mobil Veri) bağlanabilirim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">3. e-Devlet şifremi girip sisteme giriş yapabilirim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">4. MHRS'den kendime hastane randevusu alabilirim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">5. e-Nabız'dan son tahlil sonuçlarıma bakabilirim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">6. WhatsApp ile görüntülü arama başlatabilirim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">7. Google Haritalar'dan konumumu bir yakınıma gönderebilim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 50px; text-align: right;">
+            <strong>Uygulayıcı Öğrenci Adı/İmzası:</strong><br><br>....................................................
+        </div>
+    </div>
+
+
+    <!-- SAYFA 2: 10. MADDE (GERİ BİLDİRİM ANKETİ) -->
+    <div class="page-container">
+        <h1>10. KATILIMCI MEMNUNİYET VE DEĞERLENDİRME ANKETİ</h1>
+        <p><em>Değerli Katılımcımız, bu eğitimden ne kadar fayda sağladığınızı öğrenmek istiyoruz. Lütfen samimi düşüncelerinizi işaretleyiniz.</em></p>
+
+        <div class="section-header">EĞİTİM DEĞERLENDİRMESİ</div>
+
+        <table class="survey-table">
+            <thead>
+                <tr>
+                    <th width="60%">SORULAR</th>
+                    <th>🙁 Katılmıyorum</th>
+                    <th>😐 Kararsızım</th>
+                    <th>🙂 Katılıyorum</th>
+                    <th>😍 Kesinlikle Katılıyorum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="left-align">1. Bu eğitimde öğrendiklerim günlük hayatımı kolaylaştıracak.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">2. Eğitmen (öğrenci) bana karşı sabırlı ve nazikti.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">3. Anlatılan konuları ve uygulamaları anlayabildim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">4. Kullanılan materyaller (videolar, rehberler) anlaşılırdı.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+                <tr>
+                    <td class="left-align">5. Bu tür eğitimlerin devam etmesini isterim.</td>
+                    <td>O</td><td>O</td><td>O</td><td>O</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-header">GÖRÜŞLERİNİZ</div>
+        <p><strong>En çok neyi beğendiniz?</strong></p>
+        <div style="border: 1px dashed #ccc; height: 80px; width: 100%;"></div>
+        
+        <p><strong>Daha başka ne öğrenmek istersiniz?</strong></p>
+        <div style="border: 1px dashed #ccc; height: 80px; width: 100%;"></div>
+
+        <div style="margin-top: 30px; text-align: center; font-size: 2rem;">
+            👏 TEŞEKKÜR EDERİZ 👏
+        </div>
+    </div>
+
+
+    <!-- SAYFA 3: 11. MADDE (BAĞIMSIZ İŞLEM KONTROL LİSTESİ) -->
+    <div class="page-container">
+        <h1>11. "BAĞIMSIZ İŞLEM YAPABİLME" KONTROL LİSTESİ</h1>
+        <p><em>Bu form, katılımcının "hiç yardım almadan" aşağıdaki işlemleri yapıp yapamadığını doğrulamak içindir. Sertifika/Katılım Belgesi için bu listeden en az 3 maddeyi başarması gerekir.</em></p>
+
+        <div class="form-row">
+            <div class="form-label">Katılımcı Adı:</div>
+            <div class="form-input">..............................................</div>
+        </div>
+
+        <div class="section-header">KRİTİK GÖREVLER (En az 1 tanesi zorunlu)</div>
+        
+        <div class="checklist-item">
+            <span class="checklist-box"></span> <strong>1. e-Devlet'e Giriş:</strong> <br>
+            <span style="font-size:0.9rem; margin-left:35px; color:#666;">T.C. No ve Şifre girerek ana sayfayı açabildi mi?</span>
+        </div>
+        
+        <div class="checklist-item">
+            <span class="checklist-box"></span> <strong>2. MHRS Randevu Arama:</strong> <br>
+            <span style="font-size:0.9rem; margin-left:35px; color:#666;">Hastane ve Bölüm seçip randevu saatlerini görüntüleyebildi mi?</span>
+        </div>
+
+        <div class="checklist-item">
+            <span class="checklist-box"></span> <strong>3. e-Nabız Tahlil Sonucu:</strong> <br>
+            <span style="font-size:0.9rem; margin-left:35px; color:#666;">"Tahlillerim" ekranına girip listeden bir sonuç açabildi mi?</span>
+        </div>
+
+        <div class="section-header">YAN BECERİLER (En az 2 tanesi zorunlu)</div>
+
+        <div class="checklist-item">
+            <span class="checklist-box"></span> <strong>4. WhatsApp Görüntülü Arama:</strong> <br>
+            <span style="font-size:0.9rem; margin-left:35px; color:#666;">Kamera ikonuna basıp bir kişiyi arayabildi mi?</span>
+        </div>
+        
+        <div class="checklist-item">
+            <span class="checklist-box"></span> <strong>5. Konum Gönderme:</strong> <br>
+            <span style="font-size:0.9rem; margin-left:35px; color:#666;">Haritalar veya WhatsApp üzerinden yerini paylaşabildi mi?</span>
+        </div>
+
+        <div class="checklist-item">
+            <span class="checklist-box"></span> <strong>6. YouTube'da Video Arama:</strong> <br>
+            <span style="font-size:0.9rem; margin-left:35px; color:#666;"> Mikrofon simgesine basıp sesli arama yapabildi mi?</span>
+        </div>
+
+        <div style="margin-top: 50px; border: 2px solid #27ae60; padding: 20px; text-align: center;">
+            <h3>SONUÇ:</h3>
+            [   ] BAŞARILI (Sertifika Alabilir) <br>
+            [   ] TEKRAR EĞİTİM GEREKLİ
+            <br><br>
+            <strong>Onaylayan Eğitmen:</strong> ........................................
+        </div>
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

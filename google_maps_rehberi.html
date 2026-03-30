@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Haritalar Rehberi - Yön Bulma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #4285f4; --bg-color: #e3f2fd; --text-color: #333; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 0; font-size: 18px; }
+        header { background-color: var(--primary-color); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; border-left: 8px solid var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card h2 { color: #1565c0; border-bottom: 2px solid #eee; padding-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+        .instruction-box { display: flex; gap: 20px; margin: 20px 0; padding: 20px; background-color: #bbdefb; border-radius: 10px; }
+        .instruction-box i { font-size: 2.5em; color: var(--primary-color); min-width: 50px; text-align: center; }
+        .step-number { background-color: var(--primary-color); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2em; font-weight: bold; }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+<header>
+    <i class="fas fa-map-marked-alt" style="font-size: 3em; margin-bottom: 15px;"></i>
+    <h1>Google Haritalar</h1>
+    <p>Adrese Nasıl Gidilir, Neredeyim?</p>
+</header>
+<div class="container">
+    <div class="card">
+        <h2><span class="step-number">1</span> Bir Yeri Bulmak</h2>
+        <p>Bilmediğiniz bir adrese veya dükkana gitmek istiyorsanız:</p>
+        <div class="instruction-box">
+            <i class="fas fa-search"></i>
+            <div><strong>Arama Kutusu:</strong> Üstteki "Burada Ara" yazan yere gitmek istediğiniz yerin adını (Örn: Mardin Devlet Hastanesi) yazın veya mikrofon simgesine basıp söyleyin.</div>
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">2</span> Yol Tarifi Almak</h2>
+        <p>Aracınızla veya yürüyerek nasıl gideceğinizi öğrenmek için:</p>
+        <div class="instruction-box">
+            <i class="fas fa-directions"></i>
+            <div><strong>Yol Tarifi (Mavi Düğme):</strong> Sonuç çıkınca alttaki mavi renkli <strong>"Yol Tarifi"</strong> düğmesine basın. <br>Sonra <strong>"Başlat"</strong> (Navigasyon ok işareti) düğmesine basarsanız sesli olarak "Sağa dön, sola dön" diye sizi yönlendirir.</div>
+        </div>
+    </div>
+    <div class="card">
+        <h2><span class="step-number">3</span> Konum Paylaşma</h2>
+        <p>Kaybolursanız veya birine yerinizi bildirmek isterseniz:</p>
+        <div class="instruction-box">
+            <i class="fas fa-share-alt"></i>
+            <div><strong>Konum Atma:</strong> Haritadaki mavi noktaya (sizin olduğunuz yer) dokunun. "Konumunuzu Paylaşın" deyin ve WhatsApp'tan oğlunuza/kızınıza gönderin.</div>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>

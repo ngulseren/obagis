@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhtar Koordinasyon ve Duyuru Materyalleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --paper-color: #fff;
+            --ink-color: #2c3e50;
+            --highlight: #c0392b;
+            --poster-bg: #2980b9;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 40px;
+            color: var(--ink-color);
+        }
+
+        h1 { text-align: center; color: #333; margin-bottom: 40px; }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            margin: 50px 0 20px;
+            color: #444;
+            border-bottom: 3px solid #666;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .center-wrapper { text-align: center; }
+
+        /* A4 KAĞIT TASARIMI - TUTANAK İÇİN */
+        .a4-page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 25mm;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .tutanak-header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tutanak-header h2 {
+            margin: 0;
+            font-size: 16pt;
+            text-transform: uppercase;
+        }
+        .tutanak-header h3 {
+            margin: 5px 0 0;
+            font-size: 12pt;
+            font-weight: normal;
+        }
+
+        .tutanak-body p {
+            font-size: 11pt;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .tutanak-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .tutanak-table td, .tutanak-table th {
+            border: 1px solid #000;
+            padding: 10px;
+            font-size: 11pt;
+        }
+
+        .imza-bolumu {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .imza-kutu {
+            width: 40%;
+        }
+
+        /* AFİŞ TASARIMI */
+        .poster {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            width: 600px;
+            margin: 0 auto;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            font-family: 'Oswald', sans-serif;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid white;
+        }
+
+        .poster-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 #000;
+            color: #ffeb3b; 
+        }
+
+        .poster-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .poster-icon-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .poster-icon {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            width: 80px;
+        }
+        .poster-icon i { font-size: 2.5rem; margin-bottom: 5px; }
+        .poster-icon div { font-size: 0.8rem; font-family: 'Roboto', sans-serif; }
+
+        .poster-info {
+            background: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transform: rotate(-1deg);
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        }
+
+        /* ANONS KARTLARI */
+        .announcement-card {
+            background: #fff3e0;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            border-left: 10px solid #ff9800;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .announcement-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .announcement-text {
+            font-size: 1.1rem;
+            background: white;
+            padding: 15px;
+            border: 1px dashed #ccc;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .a4-page { box-shadow: none; margin: 0; width: 100%; min-height: auto; page-break-after: always; }
+            h1, .section-title { display: none; }
+            .poster { page-break-after: always; border: 1px solid #ddd; }
+        }
+    </style>
+
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SIDEBAR -->
+    
+
+<div class="main-content-wrapper">
+
+    <h1>Köy Koordinasyon ve Duyuru Seti</h1>
+
+    <!-- BÖLÜM 1: RESMİ TUTANAK -->
+    <div class="center-wrapper">
+        <div class="section-title">1. KOORDİNASYON TUTANAĞI</div>
+    </div>
+
+    <div class="a4-page">
+        <div class="tutanak-header">
+            <h2>KIRSAL KESİMDE DİJİTAL HİZMETLER PROJESİ</h2>
+            <h3>Köy Muhtarlığı İşbirliği ve Koordinasyon Tutanağı</h3>
+        </div>
+
+        <div class="tutanak-body">
+            <table class="tutanak-table">
+                <tr>
+                    <th style="width: 30%; background: #f9f9f9;">KÖY / MAHALLE ADI</th>
+                    <td>........................................................... MAHALLESİ</td>
+                </tr>
+                <tr>
+                    <th style="background: #f9f9f9;">TOPLANTI TARİHİ</th>
+                    <td>26 / 03 / 2026</td>
+                </tr>
+                <tr>
+                    <th style="background: #f9f9f9;">TOPLANTI YERİ</th>
+                    <td>Muhtarlık Ofisi / Köy Odası</td>
+                </tr>
+            </table>
+
+            <p><strong>GÜNDEM:</strong></p>
+            <ol>
+                <li>Proje kapsamında yapılacak dijital okuryazarlık eğitimlerinin tanıtılması.</li>
+                <li>Eğitim yapılacak yerin (Taziye Evi, Okul, Köy Odası vb.) belirlenmesi.</li>
+                <li>Eğitim tarih ve saatinin köy halkının uygunluğuna göre planlanması.</li>
+                <li>Özellikle kadın ve yaşlı katılımının teşvik edilmesi için yapılacak duyurular.</li>
+            </ol>
+
+            <p><strong>ALINAN KARARLAR:</strong></p>
+            <p>1. Artuklu Kırsal Kalkınma Projesi kapsamında okulumuz öğretmen ve öğrencileri tarafından köyümüzde <strong>"e-Devlet, e-Nabız, MHRS Kullanım Eğitimi"</strong> verilmesi Muhtarlığımızca uygun görülmüş ve desteklenmesine karar verilmiştir.</p>
+            
+            <p>2. Eğitim yeri olarak .......................................................................... belirlenmiştir. Gerekli masa/sandalye düzeni ve ısınma imkanları Muhtarlık tarafından sağlanacaktır.</p>
+
+            <p>3. Eğitimin ...................................... tarihinde, saat ...........'da yapılması; bu saatin köylülerin iş yoğunluğunun en az olduğu zaman dilimi olduğu teyit edilmiştir.</p>
+
+            <p>4. Duyuruların Cami hoparlöründen 2 gün önceden başlanarak yapılmasına karar verilmiştir.</p>
+
+            <div class="imza-bolumu">
+                <div class="imza-kutu">
+                    <p><strong>Okul Temsilcisi</strong></p>
+                    <br><br>
+                    <p>Nurettin GÜLSEREN<br>Proje Koordinatörü</p>
+                </div>
+                <div class="imza-kutu">
+                    <p><strong>Köy / Mahalle Muhtarı</strong></p>
+                    <br><br>
+                    <p>.......................................<br>Muhtar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- BÖLÜM 2: DUVAR AFİŞİ -->
+    <div class="center-wrapper">
+        <div class="section-title">2. KÖY KAHVESİ / OKUL AFİŞİ</div>
+    </div>
+
+    <div class="poster">
+        <div class="poster-title">KÖYÜMÜZE DİJİTAL HİZMET GELİYOR!</div>
+        <div class="poster-subtitle">Artık Hastane Randevusu Almak, e-Devlet'e Girmek Çok Kolay...</div>
+        
+        <div class="poster-icon-grid">
+            <div class="poster-icon">
+                <i class="fas fa-hospital-user"></i>
+                <div>MHRS</div>
+            </div>
+            <div class="poster-icon">
+                <i class="fas fa-university"></i>
+                <div>e-Devlet</div>
+            </div>
+            <div class="poster-icon">
+                <i class="fas fa-heartbeat"></i>
+                <div>e-Nabız</div>
+            </div>
+            <div class="poster-icon">
+                <i class="fab fa-whatsapp"></i>
+                <div>Görüntülü</div>
+            </div>
+        </div>
+
+        <p style="font-size: 1.3rem;">Gençlerimiz Geliyor, Dedelerimize Ninelerimize Öğretiyor!</p>
+        <p>Akıllı telefonunu al gel, torunlarınla görüntülü konuşmayı, hastaneye gitmeden tahlil sonucuna bakmayı öğren.</p>
+
+        <div class="poster-info">
+            YER: KÖY ODASI / TAZİYE EVİ<br>
+            TARİH: BU PAZAR SAAT 13:00'DA<br>
+            <span style="color: #c0392b; font-size: 0.9em;">(EĞİTİM ÜCRETSİZDİR - ÇAYLAR BİZDEN)</span>
+        </div>
+    </div>
+
+
+    <!-- BÖLÜM 3: ANONS METİNLERİ -->
+    <div class="center-wrapper">
+        <div class="section-title">3. SESLİ VE YAZILI DUYURU METİNLERİ</div>
+    </div>
+
+    <div class="announcement-card">
+        <div class="announcement-title">
+            <i class="fas fa-bullhorn"></i> CAMİ ANONSU (Hoparlör İçin)
+        </div>
+        <div class="announcement-text">
+            "Dikkat Dikkat... Köyümüz halkına duyurulur!<br><br>
+            Artuklu Meslek Lisesi'nden öğretmen ve öğrenciler köyümüze misafir gelecektir.<br>
+            Akıllı telefonu olan, hastane randevusu almakta zorlanan, e-Devlet şifresini kullanamayan, uzaktaki çocuğuyla görüntülü konuşmak isteyen tüm köylülerimiz;<br><br>
+            Bugün saat [SAAT]'te, [YER]'e davetlidir. Gençlerimiz size telefon kullanmayı tek tek gösterecektir. Duyurulur..."
+        </div>
+    </div>
+
+    <div class="announcement-card" style="border-left-color: #2ecc71; background: #e8f5e9;">
+        <div class="announcement-title" style="color: #27ae60;">
+            <i class="fab fa-whatsapp"></i> WHATSAPP / SMS DUYURUSU (Muhtar Grubu İçin)
+        </div>
+        <div class="announcement-text">
+            👋 Selamünaleyküm komşular.<br><br>
+            Yarın köyümüzde çok güzel bir hizmet var. Gençlerimiz gelip bize telefondan hastane randevusu almayı, tahlil sonucuna bakmayı, e-Devlet işlerini öğretecek.<br><br>
+            Kimse "ben yapamam" demesin, yaşlılarımız için özel anlatacaklar. Telefonunu kapan <strong>[YER]</strong>'e gelsin.<br>
+            🗓 <strong>Tarih:</strong> Yarın<br>
+            ⏰ <strong>Saat:</strong> [SAAT]
+        </div>
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="footer-center">
+            <span class="footer-warning"><i class="fas fa-exclamation-triangle"></i> Bu rehber bilgilendirme amaçlı hazırlanmıştır. Resmi e-Devlet sitesi değildir.</span>
+            <span class="footer-info">© 2026 Artuklu İlçe Milli Eğitim Müd. YEKTA Projesi - Dijital Okuryazarlık Eğitimi</span>
+        </div>
+        <div class="footer-meta">
+            <div><i class="fas fa-code-branch"></i> v1.0 Release</div>
+            <div>Mardin MTAL Bilişim Teknolojileri Alanı</div>
+        </div>
+    </div>
+
+
+</div><script src="layout.js"></script>
+</body>
+</html>
